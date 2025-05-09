@@ -140,7 +140,7 @@ export default function Home() {
               Поставка тренажёров, спецтехники и СИЗ для МЧС, МВД, МО и промышленных объектов
             </p>
             <Link
-              href="/contacts"
+              href="#contact-form"
               className="inline-block bg-[#D32F2F] hover:bg-[#B71C1C] text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
             >
               Оставить заявку
@@ -179,7 +179,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="w-full bg-[#23232b] py-16 text-white">
+      <section id="contact-form" className="w-full bg-[#23232b] py-16 text-white">
         <div className="container mx-auto px-4 flex flex-col md:flex-row gap-12 items-stretch">
           {/* Форма связи */}
           <div className="flex-1 bg-[#181818] rounded-2xl shadow-lg p-8 flex flex-col justify-center">

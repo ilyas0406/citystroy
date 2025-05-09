@@ -22,7 +22,7 @@ const Header = () => {
         { title: 'Специальное оборудование', href: '/equipment' }
       ]
     },
-    { title: 'О компании', href: '/about' },
+
     { title: 'Контакты', href: '/contacts' },
   ];
 

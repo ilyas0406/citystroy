@@ -15,7 +15,7 @@ const Footer = () => {
               <p>Юридический адрес: г. Актобе, ул. Газизы Жубановой 39Н, н/п 44</p>
               <p>Фактический адрес: г. Актобе, ул. Газизы Жубановой 39Н, офис 303, БЦ «Апельсин»</p>
               <p>Контактное лицо: Асхат Максатович Жалимбетов, <a href="tel:+77762528252" className="underline hover:text-primary">+7 776 252 82 52</a></p>
-            <a href="/about" className="block mt-2 text-[#D32F2F] hover:text-white underline">О компании</a>
+
             </div>
           </div>
 
@@ -32,7 +32,7 @@ const Footer = () => {
                 <Link href="/equipment" className="text-gray-400 hover:text-white">Специальное оборудование</Link>
               </div>
             </div>
-            <Link href="/about" className="text-gray-400 hover:text-white font-medium mt-2">О компании</Link>
+
             <Link href="/contacts" className="text-gray-400 hover:text-white font-medium">Контакты</Link>
           </nav>
 
