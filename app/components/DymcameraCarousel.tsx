@@ -2,11 +2,11 @@
 import { useState } from "react";
 
 const images = [
-  "/dymcamera/dymcamera1.avif",
-  "/dymcamera/dymcamera2.avif",
-  "/dymcamera/dymcamera3.avif",
-  "/dymcamera/dymcamera4.avif",
-  "/dymcamera/dymcamera5.avif"
+  "/dymcamera/dymcamera1.jpg",
+  "/dymcamera/dymcamera2.jpg",
+  "/dymcamera/dymcamera3.jpg",
+  "/dymcamera/dymcamera4.jpg",
+  "/dymcamera/dymcamera5.jpg"
 ];
 
 export default function DymcameraCarousel() {
@@ -17,35 +17,29 @@ export default function DymcameraCarousel() {
   const next = () => setActive((active + 1) % total);
 
   return (
-    <div className="relative flex flex-row items-center h-[550px] w-[1140px] select-none overflow-hidden ml-auto mr-12">
-      {/* Кнопки-свайпы поверх картинки */}
-      {/* Левая стрелка слева, правая справа — по центру */}
+    <div className="relative flex flex-row items-center justify-center h-[550px] w-[1140px] select-none overflow-hidden ml-auto mr-12">
+      {/* Левая стрелка */}
       <button
         className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-primary/80 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-colors duration-200 backdrop-blur-md text-2xl"
         onClick={prev}
         aria-label="Назад"
-        style={{}}
       >
-        <span className="pointer-events-none select-none">&#8592;</span>
+        &#8592;
       </button>
+      {/* Картинка фиксированного размера по центру */}
+      <img
+        src={images[active]}
+        alt={`Дымкамера ${active + 1}`}
+        className="w-[650px] h-[420px] object-cover rounded-2xl shadow-xl mx-auto"
+      />
+      {/* Правая стрелка */}
       <button
         className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-primary/80 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-colors duration-200 backdrop-blur-md text-2xl"
         onClick={next}
         aria-label="Вперёд"
-        style={{}}
       >
-        <span className="pointer-events-none select-none">&#8594;</span>
+        &#8594;
       </button>
-
-      {/* Обычный слайдер — только один слайд */}
-      <div className="w-full h-full flex items-center justify-center">
-        <img
-          src={images[active]}
-          alt={`dymcamera${active+1}`}
-          className="rounded-xl h-[600px] w-[940px] object-contain shadow-2xl transition-opacity duration-500"
-          draggable={false}
-        />
-      </div>
     </div>
   );
 }

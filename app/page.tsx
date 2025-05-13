@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import FlipCard from './components/FlipCard';
 
 const productCategories = [
   {
@@ -21,8 +22,8 @@ const productCategories = [
     href: '/siz'
   },
   {
-    title: 'Снаряжение для спецназа',
-    description: 'Тактическое снаряжение для специальных подразделений',
+    title: 'Специальное оборудование',
+    description: 'Спецтехника для сил МЧС, МВД, МО',
     href: '/equipment'
   }
 ];
@@ -92,22 +93,38 @@ function ProductShowcase() {
           <div className="text-gray-400">Нет продуктов в этой категории.</div>
         ) : (
           products.map((prod, idx) => {
-            // Ссылка и расширенный вывод только для Теплодымокамеры
-            if (prod.title === 'Теплодымокамера') {
+              // Генерируем slug для ссылки
+              const slugs: Record<string, string> = {
+                'Теплодымокамера': 'teplodymokamera',
+                'Сейсмотренажер': 'seismotrenazher',
+                'Огневой полигон': 'ognevoi-poligon',
+                'АБР (Автомобиль быстрого реагирования)': 'abr',
+                'Реанимобиль A/B/C': 'reanimobil',
+                'АСА (аварийно-спасательный автомобиль)': 'aca',
+                'Автобаклаборатория': 'avtobaklaboratoriya',
+                'Воздушно дыхательный аппарат - MSA (Германия)': 'msa',
+                'Водолазный дыхательный аппарат': 'vodolaz',
+                'Боевая одежда пожарного - БОП': 'bop',
+                'Снаряжения для спецназа': 'snaryazhenie',
+                'Костюм изолирующий химический закрытого типа': 'kostyum-ximicheskii',
+                'Противогаз': 'protivogaz',
+                'Стационарный компрессор (высокого и среднего давления)': 'kompressor-statsionar',
+                'Мобильный компрессор (высокого и среднего давления)': 'kompressor-mobil',
+              };
+              const slug = slugs[prod.title];
               return (
                 <div key={idx} className="border-b border-[#333] pb-4 mb-4 last:mb-0 last:pb-0 last:border-b-0">
-                  <a href="/products/teplodymokamera" className="text-2xl font-bold mb-1 text-primary hover:underline">{prod.title}</a>
+                  {slug ? (
+                    <Link href={`/products/${slug}`} className="text-2xl font-bold mb-1 text-primary hover:underline">
+                      {prod.title}
+                    </Link>
+                  ) : (
+                    <div className="text-2xl font-bold mb-1">{prod.title}</div>
+                  )}
+                  <div className="text-gray-300">{prod.description}</div>
                 </div>
               );
-            }
-            // Остальные продукты
-            return (
-              <div key={idx} className="border-b border-[#333] pb-4 mb-4 last:mb-0 last:pb-0 last:border-b-0">
-                <div className="text-2xl font-bold mb-1">{prod.title}</div>
-                <div className="text-gray-300">{prod.description}</div>
-              </div>
-            );
-          })
+            })
         )}
       </div>
     </div>
@@ -149,15 +166,38 @@ export default function Home() {
         </div>
       </section>
 
+        <section>
+  <h2 className="text-4xl md:text-5xl font-bold mb-10 text-white text-center">Мы занимаемся</h2>
+  <div className="flip-cards grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 mb-24">
+    <FlipCard
+      frontTitle="Собственное производство"
+      frontText="Изготавливаем УТК, СИЗ и оборудование по ГОСТу и ТУ"
+      backText="Работаем с МЧС, МО, МВД и корпоративными заказчиками по Казахстану"
+    />
+    <FlipCard
+      frontTitle="Гарантия и сертификация"
+      frontText="Каждый продукт проходит проверку качества"
+      backText="Предоставляем все сертификаты и техническую документацию"
+    />
+    <FlipCard
+      frontTitle="Склад и логистика"
+      frontText="Поддерживаем наличие популярных моделей"
+      backText="Быстрая отгрузка по всей территории РК и СНГ"
+    />
+  </div>
+</section>
       {/* Product Categories */}
       <section className="w-full h-screen min-h-screen flex items-center justify-center m-0 p-0 bg-[#23232b]">
-        <ProductShowcase />
+<ProductShowcase />
       </section>
 
       {/* Partners Carousel */}
-      <section className="w-full bg-white py-12">
+      <section className="w-full py-16 carbonBg">
         <div className="container mx-auto px-4">
-          <InfinityPartnersCarousel />
+          
+
+<InfinityPartnersCarousel />
+
         </div>
       </section>
 
