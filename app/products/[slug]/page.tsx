@@ -19,6 +19,10 @@ const products = [
 ];
 
 import React from 'react';
+import Image from 'next/image';
+import SwatCarousel from '../../components/SwatCarousel';
+import OgnevoyPoligonCarousel from '../../components/OgnevoyPoligonCarousel';
+import AvtobaclabCarousel from '../../components/AvtobaclabCarousel';
 
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const product = products.find(p => p.slug === params.slug);
@@ -32,23 +36,15 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <div className="md:w-1/2 w-full flex flex-col justify-center items-start max-w-xl">
           <h1 className="text-4xl font-bold mb-6">Теплодымокамера</h1>
           <div className="text-gray-300 text-base mb-2">
-            Противопожарные тренажеры — это изготовленные на заказ многомодульные тренажеры для обучения поведению при пожаре, изготовленные с учетом требований безопасности. На этих тренажерах можно проводить множество практических занятий, в том числе: перекидывание через стену, обратное перемещение и работу на высоте. Конечные пользователи получат пользу от практических упражнений в реальных условиях, таких как боевые действия и ситуационные мероприятия. Наряду с этим, учебный центр пожарной охраны позволяет департаменту проводить наилучшую подготовку для своих новобранцев и совершенствовать навыки пожарных и способность реагировать.<br/>
+            Многофункциональный учебно-тренировочный комплекс для отработки действий при пожаре и в условиях ЧС. Используется для практической подготовки спасателей и пожарных в реалистичных условиях.
             <br/>
-            Учебно-тренажерный коплекс "Теплодымокамера" включает в себя:
             <ul className="list-disc ml-6">
               <li>тренажерную зону;</li>
-              <li>пульт управления комплекса;</li>
-              <li>лабиринт;</li>
-              <li>участок;</li>
-              <li>система задымления;</li>
-              <li>система контактных полов;</li>
-              <li>система двухсторонней дуплексно/симплексной связи;</li>
-              <li>система видеонаблюдения и инфракрасного слежения;</li>
-              <li>система создания световых эффектов;</li>
-              <li>система создания звуковых эффектов;</li>
-              <li>система приточно-вытяжной вентиляции;</li>
-              <li>система дистанционного контроля;</li>
-              <li>тренажер спасения из шахт, завалов, колодцев</li>
+              <li>Систему задымления и контактных полов</li>
+              <li>Видеонаблюдение, инфракрасное слежение</li>
+              <li>Пульт управления, вентиляцию, связь</li>
+              <li>Световые и звуковые эффекты</li>
+              <li>Модули для спасения из шахт, завалов, колодцев</li>
             </ul>
           </div>
         </div>
@@ -65,218 +61,358 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     'seismotrenazher': (
       <>
         <h1 className="text-4xl font-bold mb-6">Сейсмотренажер</h1>
-        <div className="text-gray-300 text-base mb-2 max-w-2xl">
-          Симулятор землетрясения предназначен не только для повышения осведомленности населения о землетрясениях, но и для демонстрации индивидуального безопасного поведения и практических действий в случае землетрясения.<br/><br/>
-          Точная сейсмическая нагрузка до шести степеней свободы может быть приложена к широкому спектру испытуемых изделий для оценки их поведения в условиях реального землетрясения.<br/><br/>
-          <b>Основные элементы симулятора:</b>
-          <ul className="list-disc ml-6">
-            <li>Пульт управления симулятором</li>
-            <li>Система двухсторонней симплексной связи</li>
-            <li>Система видеонаблюдения</li>
-            <li>Динамическая платформа (технологический отсек)</li>
-            <li>Имитация жилой комнаты</li>
-          </ul>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="text-gray-300 text-base mb-2 max-w-2xl">
+          Симулятор землетрясения предназначен не только для повышения осведомленности населения о землетрясениях, но и для демонстрации индивидуального безопасного поведения и практических действий в случае землетрясения.
+            <b>Возможности комплекса:</b>
+            <ul className="list-disc ml-6">
+              <li>Пульт управления симулятором</li>
+              <li>Система двухсторонней симплексной связи</li>
+              <li>Система видеонаблюдения</li>
+              <li>Динамическая платформа (технологический отсек)</li>
+              <li>Имитация жилой комнаты</li>
+            </ul>
+          </div>
+          <div className="md:w-1/2 flex justify-center items-center">
+            <Image 
+               src="/seismo/24.avif"
+              alt="Сейсмотренажер"
+              width={650}
+              height={500}
+              className="rounded-2xl shadow-xl object-fill"
+            />
+          </div>
         </div>
       </>
     ),
     'ognevoi-poligon': (
       <>
         <h1 className="text-4xl font-bold mb-6">Огневой полигон</h1>
-        <div className="text-gray-300 text-base mb-2 max-w-2xl">
-          Комплекс учебно-тренировочный огневой предназначен для:<br/>
-          <ul className="list-disc ml-6">
-            <li>отработки навыков применения новых технических средств, пожарно-спасательной техники и технологий пожаротушения;</li>
-            <li>подготовки пожарных к работе в особо сложных условиях и в агрессивных средах при воздействиях открытого пламени, задымления, повышенной влажности;</li>
-            <li>выработки у тренирующихся навыков работы в специальных защитных костюмах с применением средств индивидуальной защиты органов дыхания (СИЗОД);</li>
-            <li>отработки приемов поиска людей в задымленной зоне и их спасению;</li>
-            <li>выработки психологической устойчивости тренируемых к воздействию различных факторов пожаров.</li>
-          </ul>
-          <br/>
-          <b>Характеристики:</b>
-          <ul className="list-disc ml-6">
-            <li>Контейнеры длиной от 2 до 12 метров</li>
-            <li>Контейнеры объемом от 3 до 20 футов</li>
-            <li>Камеры для сжигания весом от 3 до 201 тонны с выгребной ямой, цепями для подвешивания материалов и люками для очистки</li>
-            <li>Вентиляционный люк</li>
-            <li>Система контроля температуры по Bluetooth</li>
-            <li>Опора для пролома стены</li>
-            <li>Внутренние и наружные лестницы</li>
-            <li>Активная крыша с системой ограждений</li>
-            <li>Опора для скатной крыши</li>
-            <li>Входная дверь с принудительным открыванием</li>
-            <li>Противопожарные двери</li>
-          </ul>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="text-gray-300 text-base mb-2 max-w-2xl">
+            Полномасштабный учебно-тренировочный комплекс, предназначенный для подготовки пожарных и спасателей к работе в самых сложных и опасных условиях. Комплекс позволяет максимально приблизить условия реальных чрезвычайных ситуаций, включая сложнейшие сценарии с огнем, дымом, высокой влажностью и замкнутыми пространствами. Используется для полноценной профессиональной подготовки личного состава служб спасения, формирования устойчивых навыков действий в экстремальных условиях.
+
+            <b>Возможности комплекса:</b>
+            <ul className="list-disc ml-6">
+              <li>Отработка навыков тушения и применения спецтехники</li>
+              <li>Работа в защитных костюмах и СИЗОД</li>
+              <li>Тренировки по спасению людей в задымлённой зоне</li>
+              <li>Развитие устойчивости к стрессовым факторам пожара</li>
+            </ul>
+
+            <b>Характеристики:</b>
+            <ul className="list-disc ml-6">
+              <li>Контейнеры от 2 до 12 м</li>
+              <li>Камеры сжигания до 201 т с люками и цепями</li>
+              <li>Система контроля температуры (Bluetooth)</li>
+              <li>Лестницы, двери, крыши с элементами нагрузки</li>
+              <li>Противопожарные и аварийные элементы</li>
+            </ul>
+            
+          </div>
+          <div className="md:w-1/2 flex justify-center items-center">
+            <OgnevoyPoligonCarousel />
+          </div>
         </div>
       </>
     ),
     'abr': (
       <>
         <h1 className="text-4xl font-bold mb-6">Автомобиль быстрого реагирования (АБР)</h1>
-        <div className="text-gray-300 text-base mb-2 max-w-2xl">
-          Автомобиль быстрого реагирования – это пожарный автомобиль первой помощи.<br/><br/>
-          <b>Назначение:</b>
-          <ul className="list-disc ml-6">
-            <li>Доставка к месту пожара (аварии) личного состава, запаса огнетушащих веществ, технического вооружения и аварийно-спасательного оборудования и инструмента;</li>
-            <li>Проведение аварийно-спасательных работ на месте ДТП;</li>
-            <li>Тушение пожаров классов А, Б, С при помощи подачи воды и пены;</li>
-            <li>Выполнение задач по ликвидации возгораний и последствий ДТП;</li>
-            <li>Штатная кабина для размещения до 6 человек боевого расчета.</li>
-          </ul>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="text-gray-300 text-base mb-2 max-w-2xl">
+            Автомобиль быстрого реагирования – это пожарный автомобиль первой помощи.<br/><br/>
+            <b>Назначение:</b>
+            <ul className="list-disc ml-6">
+              <li>Доставка к месту пожара (аварии) личного состава, запаса огнетушащих веществ, технического вооружения и аварийно-спасательного оборудования и инструмента;</li>
+              <li>Проведение аварийно-спасательных работ на месте ДТП;</li>
+              <li>Тушение пожаров классов А, Б, С при помощи подачи воды и пены;</li>
+              <li>Выполнение задач по ликвидации возгораний и последствий ДТП;</li>
+              <li>Штатная кабина для размещения до 6 человек боевого расчета.</li>
+            </ul>
+          </div>
+          <div className="md:w-1/2 flex justify-center items-center">
+            <Image 
+              src="/Abr/abr.avif"
+              alt="Автомобиль быстрого реагирования"
+              width={650}
+              height={500}
+              className="rounded-2xl shadow-xl object-fill"
+            />
+          </div>
         </div>
       </>
     ),
     'reanimobil': (
       <>
         <h1 className="text-4xl font-bold mb-6">Реанимобиль A/B/C</h1>
-        <div className="text-gray-300 text-base mb-2 max-w-2xl">
-          Реанимобиль предназначен для перевозки маломобильных пациентов, пострадавших с травмами и тяжёлобольных.<br/><br/>
-          <b>Особенности:</b>
-          <ul className="list-disc ml-6">
-            <li>Расширенный функционал для оказания медицинской помощи в пути;</li>
-            <li>Быстрая транспортировка в больницу;</li>
-            <li>Современное оборудование и комфорт для пациента и медицинского персонала.</li>
-          </ul>
+           <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="text-gray-300 text-base mb-2 max-w-2xl">
+            <p className="mb-4">Реанимобиль предназначен для перевозки маломобильных пациентов, пострадавших с травмами и тяжёлобольных.</p>
+            <ul className="list-disc ml-6 space-y-2">
+              <li>Расширенный функционал для оказания медицинской помощи в пути</li>
+              <li>Быстрая транспортировка в больницу</li>
+              <li>Современное оборудование и комфорт для пациента и медицинского персонала</li>
+            </ul>
+          </div>
+          <div className="md:w-1/2 flex justify-center items-center">
+            <Image 
+              src="/reanimobil/reanimobil.avif"
+              alt="Реанимобиль"
+              width={650}
+              height={500}
+              className="rounded-2xl shadow-xl object-fill"
+            />
+          </div>
         </div>
       </>
     ),
     'aca': (
       <>
         <h1 className="text-4xl font-bold mb-6">Аварийно-спасательный автомобиль (АСА)</h1>
-        <div className="text-gray-300 text-base mb-2 max-w-2xl">
-          <ul className="list-disc ml-6">
-            <li>Тушение первичных возгораний водой и пеной;</li>
-            <li>Оценка обстановки и передача информации в штаб;</li>
-            <li>Работа в зонах ЧС и ликвидации последствий ДТП;</li>
-            <li>Оказание первой медицинской помощи пострадавшим.</li>
-          </ul>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="text-gray-300 text-base mb-2 max-w-2xl">
+            <p className="mb-4">Аварийно-спасательный автомобиль предназначен для оперативного реагирования в чрезвычайных ситуациях и оснащён всем необходимым для проведения спасательных работ:</p>
+            <ul className="list-disc ml-6 space-y-2">
+              <li>Тушение очагов возгорания с использованием воды и пенообразователей;</li>
+              <li>Оценка оперативной обстановки и передача данных в штаб реагирования;</li>
+              <li>Выполнение аварийно-спасательных работ при ДТП и других ЧС;</li>
+              <li>Оказание первой медицинской помощи пострадавшим на месте происшествия.</li>
+            </ul>
+          </div>
+          <div className="md:w-1/2 flex justify-center items-center">
+            <Image 
+              src="/asa/asa.avif"
+              alt="Аварийно-спасательный автомобиль"
+              width={650}
+              height={500}
+              className="rounded-2xl shadow-xl object-fill"
+            />
+          </div>
         </div>
       </>
     ),
     'avtobaklaboratoriya': (
       <>
         <h1 className="text-4xl font-bold mb-6">Автобаклаборатория</h1>
-        <div className="text-gray-300 text-base mb-2 max-w-2xl">
-          Санитарно-эпидемиологическая лаборатория для работы в зоне ЧС, разрушенной инфраструктуре, для проведения противоэпидемических мероприятий.<br/><br/>
-          <b>Возможности:</b>
-          <ul className="list-disc ml-6">
-            <li>Диагностика возбудителей особо опасных инфекций;</li>
-            <li>Проведение ПЦР-диагностики;</li>
-            <li>Работа с биоматериалами и культурами;</li>
-            <li>Автономная работа в полевых условиях.</li>
-          </ul>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="text-gray-300 text-base mb-2 max-w-2xl">
+            Санитарно-эпидемиологическая лаборатория для работы в зоне ЧС, разрушенной инфраструктуре, для проведения противоэпидемических мероприятий.<br/><br/>
+            <b>Возможности:</b>
+            <ul className="list-disc ml-6">
+              <li>Диагностика возбудителей особо опасных инфекций;</li>
+              <li>Проведение ПЦР-диагностики;</li>
+              <li>Работа с биоматериалами и культурами;</li>
+              <li>Автономная работа в полевых условиях.</li>
+            </ul>
+          </div>
+          <div className="md:w-1/2 flex justify-center items-center">
+            <AvtobaclabCarousel />
+          </div>
         </div>
       </>
     ),
     'msa': (
       <>
         <h1 className="text-4xl font-bold mb-6">Воздушно-дыхательный аппарат MSA (Германия)</h1>
-        <div className="text-gray-300 text-base mb-2 max-w-2xl">
-          Модульный автономный дыхательный аппарат избыточного давления для работы в опасных средах.<br/><br/>
-          <b>Особенности:</b>
-          <ul className="list-disc ml-6">
-            <li>Защита от вдыхания опасных веществ и недостатка кислорода;</li>
-            <li>Сертифицированная лицевая маска;</li>
-            <li>Подача воздуха из баллона через редуктор давления;</li>
-            <li>Выдыхаемый воздух выводится в атмосферу.</li>
-          </ul>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="text-gray-300 text-lg mb-2 max-w-2xl">
+            Воздушно-дыхательный аппарат предназначен для защиты органов дыхания пожарных и спасателей в условиях сильного задымления.<br/><br/>
+            <b>Основные характеристики:</b>
+            <ul className="list-disc ml-6 space-y-2">
+              <li>Высокая степень защиты органов дыхания;</li>
+              <li>Работа в условиях повышенной температуры;</li>
+              <li>Регулировка подачи воздуха;</li>
+              <li>Работа в задымленных помещениях.</li>
+            </ul>
+          </div>
+          <div className="md:w-1/2 flex justify-center items-center">
+            <Image 
+              src="/msa/msa.png"
+              alt="Воздушно-дыхательный аппарат MSA"
+              width={250}
+              height={160}
+              className="rounded-lg shadow-md object-cover"
+            />
+          </div>
         </div>
       </>
     ),
     'vodolaz': (
       <>
         <h1 className="text-4xl font-bold mb-6">Водолазный дыхательный аппарат</h1>
-        <div className="text-gray-300 text-base mb-2 max-w-2xl">
-          Аппарат предназначен для обеспечения дыхания водолаза при работах на глубинах до 60 м, в том числе в условиях низких температур.<br/><br/>
-          <b>Комплектация:</b>
-          <ul className="list-disc ml-6">
-            <li>Блок баллонов, спинка с подвесной системой и грузом;</li>
-            <li>Редукторы и дыхательные автоматы;</li>
-            <li>Компенсатор плавучести, манометр;</li>
-            <li>Работа в автономном режиме или как резервный аппарат.</li>
-          </ul>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="text-gray-300 text-xl mb-4 max-w-3xl">
+            Аппарат для дыхания под водой с замкнутым циклом. Используется для проведения подводных работ на больших глубинах.<br/><br/>
+            <b>Характеристики:</b>
+            <ul className="list-disc ml-6 space-y-3 text-lg">
+              <li>Работа на глубинах до 60 метров с полной безопасностью;</li>
+              <li>Автономность работы до 4 часов без перезарядки;</li>
+              <li>Регенеративный дыхательный контур с полной очисткой;</li>
+              <li>Надежная защита от внешнего давления.</li>
+            </ul>
+          </div>
+          <div className="md:w-1/2 flex justify-center items-center">
+            <Image 
+              src="/vda/vda.jpg"
+              alt="Водолазный дыхательный аппарат"
+              width={450}
+              height={300}
+              className="rounded-xl shadow-lg object-cover"
+            />
+          </div>
         </div>
       </>
     ),
     'bop': (
       <>
         <h1 className="text-4xl font-bold mb-6">Боевая одежда пожарного (БОП)</h1>
-        <div className="text-gray-300 text-base mb-2 max-w-2xl">
-          Конструктивный костюм пожарного:<br/>
-          <ul className="list-disc ml-6">
-            <li>Эргономичный дизайн для эффективности и комфорта;</li>
-            <li>Высокий уровень защиты и прочности;</li>
-            <li>Защита от перегрева и пламени;</li>
-            <li>Превосходная воздухопроницаемость;</li>
-            <li>Разные цветовые варианты и типы лент;</li>
-            <li>Опционально со съемной подкладкой;</li>
-          </ul>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="text-gray-300 text-xl mb-4 max-w-3xl">
+            Конструктивный костюм пожарного:<br/>
+            <ul className="list-disc ml-6 space-y-3 text-lg">
+              <li>Эргономичный дизайн для эффективности и комфорта;</li>
+              <li>Высокий уровень защиты и прочности;</li>
+              <li>Защита от перегрева и пламени;</li>
+              <li>Превосходная воздухопроницаемость;</li>
+              <li>Разные цветовые варианты и типы лент;</li>
+              <li>Опционально со съемной подкладкой;</li>
+            </ul>
+          </div>
+          <div className="md:w-1/2 flex justify-center items-center">
+            <Image 
+              src="/bop/bop.jpg"
+              alt="Боевая одежда пожарного"
+              width={350}
+              height={250}
+              className="rounded-xl shadow-lg object-cover"
+            />
+          </div>
         </div>
       </>
     ),
     'snaryazhenie': (
       <>
-        <h1 className="text-4xl font-bold mb-6">Снаряжения для спецназа</h1>
-        <div className="text-gray-300 text-base mb-2 max-w-2xl">
-          <ul className="list-disc ml-6">
-            <li>Шлемы, жилеты, держатели, пластины и другое специальное оборудование.</li>
-          </ul>
+        <h1 className="text-4xl font-bold mb-6">Снаряжение для спецназа (SWAT)</h1>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="text-gray-300 text-xl mb-4 max-w-3xl">
+            Надёжное и современное снаряжение для профессиональных подразделений спецназа.<br/><br/>
+            <b>Основные компоненты:</b>
+            <ul className="list-disc ml-6 space-y-3 text-lg">
+              <li>Тактические шлемы с бронировкой и креплениями для оборудования;</li>
+              <li>Бронежилеты с высоким уровнем защиты;</li>
+              <li>Разгрузочные жилеты с индивидуальной комплектацией;</li>
+              <li>Активные тактические наушники с шумоподавлением;</li>
+              <li>Бронепластины повышенного класса защиты;</li>
+              <li>Шлемные коммуникационные системы.</li>
+            </ul>
+          </div>
+          <div className="md:w-3/4 flex justify-center items-center">
+            <SwatCarousel />
+          </div>
         </div>
       </>
     ),
     'kostyum-ximicheskii': (
       <>
         <h1 className="text-4xl font-bold mb-6">Костюм изолирующий химический закрытого типа</h1>
-        <div className="text-gray-300 text-base mb-2 max-w-2xl">
-          Защитный костюм для работы с химическими веществами, газами, кислотами, щелочами.<br/><br/>
-          <b>Применение:</b>
-          <ul className="list-disc ml-6">
-            <li>Газоспасательные и аварийные работы;</li>
-            <li>Обслуживание резервуаров, чистка сточных вод;</li>
-            <li>Профилактика и ликвидация утечек опасных веществ;</li>
-            <li>Герметичная молния и крепления для максимальной защиты.</li>
-          </ul>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="text-gray-300 text-xl mb-4 max-w-3xl">
+            Защитный костюм для работы с химическими веществами, газами, кислотами, щелочами. Разработан для максимальной безопасности при работе с опасными химическими веществами.<br/><br/>
+            <b>Применение:</b>
+            <ul className="list-disc ml-6 space-y-3 text-lg">
+              <li>Газоспасательные и аварийные работы;</li>
+              <li>Обслуживание резервуаров, чистка сточных вод;</li>
+              <li>Профилактика и ликвидация утечек опасных веществ;</li>
+              <li>Герметичная молния и крепления для максимальной безопасности.</li>
+            </ul>
+          </div>
+          <div className="md:w-1/2 flex justify-center items-center">
+            <Image 
+              src="/kostyum-ximicheskii/kostyum-ximicheskii.jpg"
+              alt="Костюм изолирующий химический"
+              width={450}
+              height={300}
+              className="rounded-xl shadow-lg object-cover"
+            />
+          </div>
         </div>
       </>
     ),
     'protivogaz': (
       <>
         <h1 className="text-4xl font-bold mb-6">Противогаз</h1>
-        <div className="text-gray-300 text-base mb-2 max-w-2xl">
-          Полнолицевая маска 3S фирмы MSA AUER — мировой лидер по количеству проданных масок.<br/><br/>
-          <b>Преимущества:</b>
-          <ul className="list-disc ml-6">
-            <li>Мягкий и удобный обтюратор;</li>
-            <li>Широкие ремни и глубокий подмасочник для плотного прилегания;</li>
-            <li>Смотровое стекло из ударопрочного поликарбоната;</li>
-            <li>Быстрое надевание и снятие даже под шлемом;</li>
-            <li>Возможность носить на груди в постоянной готовности.</li>
-          </ul>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="text-gray-300 text-xl mb-4 max-w-3xl">
+            Полнолицевая маска 3S фирмы MSA AUER — мировой лидер по количеству проданных масок.<br/><br/>
+            <b>Преимущества:</b>
+            <ul className="list-disc ml-6 space-y-3 text-lg">
+              <li>Мягкий и удобный обтюратор;</li>
+              <li>Широкие ремни и глубокий подмасочник для плотного прилегания;</li>
+              <li>Смотровое стекло из ударопрочного поликарбоната;</li>
+              <li>Быстрое надевание и снятие даже под шлемом;</li>
+              <li>Возможность носить на груди в постоянной готовности.</li>
+            </ul>
+          </div>
+          <div className="md:w-1/2 flex justify-center items-center">
+            <Image 
+              src="/protivogaz/protivogaz.jpeg"
+              alt="Противогаз MSA AUER"
+              width={450}
+              height={300}
+              className="rounded-xl shadow-lg object-cover"
+            />
+          </div>
         </div>
       </>
     ),
     'kompressor-statsionar': (
       <>
         <h1 className="text-4xl font-bold mb-6">Стационарный компрессор (высокого и среднего давления)</h1>
-        <div className="text-gray-300 text-base mb-2 max-w-2xl">
-          Специальное оборудование для пожарных частей и промышленных объектов.<br/>
-          <ul className="list-disc ml-6">
-            <li>Производительность и надежность для заправки дыхательных аппаратов и баллонов;</li>
-            <li>Работа в интенсивных режимах;</li>
-            <li>Современные системы фильтрации и контроля.</li>
-          </ul>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="text-gray-300 text-xl mb-4 max-w-3xl">
+            Специальное оборудование для пожарных частей и промышленных объектов.<br/><br/>
+            <b>Характеристики:</b>
+            <ul className="list-disc ml-6 space-y-3 text-lg">
+              <li>Производительность и надежность для заправки дыхательных аппаратов и баллонов;</li>
+              <li>Работа в интенсивных режимах;</li>
+              <li>Современные системы фильтрации и контроля.</li>
+            </ul>
+          </div>
+          <div className="md:w-1/2 flex justify-center items-center">
+            <Image 
+              src="/compressor/91.avif"
+              alt="Стационарный компрессор"
+              width={450}
+              height={300}
+              className="rounded-xl shadow-lg object-cover"
+            />
+          </div>
         </div>
       </>
     ),
     'kompressor-mobil': (
       <>
         <h1 className="text-4xl font-bold mb-6">Мобильный компрессор (высокого и среднего давления)</h1>
-        <div className="text-gray-300 text-base mb-2 max-w-2xl">
-          Мобильная версия компрессора для оперативной работы в полевых условиях.<br/>
-          <ul className="list-disc ml-6">
-            <li>Компактность и мобильность;</li>
-            <li>Быстрая заправка дыхательных аппаратов;</li>
-            <li>Использование в аварийных ситуациях и при ЧС.</li>
-          </ul>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="text-gray-300 text-xl mb-4 max-w-3xl">
+            Мобильная версия компрессора для оперативной работы в полевых условиях.<br/><br/>
+            <b>Преимущества:</b>
+            <ul className="list-disc ml-6 space-y-3 text-lg">
+              <li>Компактность и мобильность;</li>
+              <li>Быстрая заправка дыхательных аппаратов;</li>
+              <li>Использование в аварийных ситуациях и при ЧС.</li>
+            </ul>
+          </div>
+          <div className="md:w-1/2 flex justify-center items-center">
+            <Image 
+              src="/compressormobil/92.avif"
+              alt="Мобильный компрессор"
+              width={450}
+              height={300}
+              className="rounded-xl shadow-lg object-cover"
+            />
+          </div>
         </div>
       </>
     ),
@@ -284,7 +420,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
   if (productDescriptions[product.slug]) {
     return (
-      <div className="min-h-screen bg-[#181818] text-white flex flex-col items-center justify-center p-8">
+      <div className="min-h-screen bg-[#181818] text-white flex flex-col items-center justify-start pt-16 p-8">
         {productDescriptions[product.slug]}
       </div>
     );
@@ -292,9 +428,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
   // fallback на случай отсутствия описания
   return (
-    <div className="min-h-screen bg-[#181818] text-white flex flex-col items-center justify-center p-8">
-      <h1 className="text-4xl font-bold mb-6">{product.title}</h1>
-      <p className="text-lg text-gray-300">Описание и характеристики появятся здесь.</p>
+    <div className="min-h-screen bg-[#181818] text-white flex flex-col items-center justify-start pt-16 p-8">
+      <h1 className="text-5xl font-bold mb-10">{product.title}</h1>
+      <p className="text-xl text-gray-300">Описание и характеристики появятся здесь.</p>
     </div>
   );
 }

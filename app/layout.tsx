@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="ru">
       <body className="antialiased bg-[#1C1C1C] text-white">
         <Header />
-        {children}
+        <main className="pt-20 overflow-x-hidden">{children}</main>
         <Footer />
       </body>
     </html>

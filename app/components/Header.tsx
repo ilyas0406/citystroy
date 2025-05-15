@@ -8,6 +8,7 @@ interface MenuItem {
   title: string;
   href: string;
   subItems?: { title: string; href: string }[];
+  className?: string;
 }
 
 const Header = () => {
@@ -16,14 +17,15 @@ const Header = () => {
       title: 'Продукция', 
       href: '/products',
       subItems: [
-        { title: 'Учебно-тренировочные комплексы', href: '/training-complexes' },
-        { title: 'Спецтехника для сил МЧС МВД и МО', href: '/special-vehicles' },
-        { title: 'Средства Индивидуальной Защиты', href: '/siz' },
-        { title: 'Специальное оборудование', href: '/equipment' }
+        { title: 'Учебно-тренировочные комплексы', href: '/uchebno-trenirovochnye-kompleksy' },
+        { title: 'Спецтехника для сил МЧС МВД и МО', href: '/spetstehnika' },
+        { title: 'Средства Индивидуальной Защиты', href: '/sredstva-individualnoy-zashchity' },
+        { title: 'Специальное оборудование', href: '/spetsialnoe-oborudovanie' }
       ]
     },
 
-    { title: 'Контакты', href: '/contacts' },
+    { title: 'О компании', href: '/about' },
+    { title: 'Контакты', href: '/#contact-form', className: 'bg-[#D32F2F] text-white' },
   ];
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -77,7 +79,7 @@ const Header = () => {
       <Link 
         key={item.href} 
         href={item.href} 
-        className="bg-[#2C2C2C] hover:bg-[#D32F2F] text-white px-4 py-2 rounded-lg transition-colors"
+        className={`bg-[#2C2C2C] hover:bg-[#D32F2F] text-white px-4 py-2 rounded-lg transition-colors ${item.className || ''}`}
       >
         {item.title}
       </Link>
@@ -142,7 +144,6 @@ const Header = () => {
               Главная
             </Link>
             {menuItems.map(renderMenuItem)}
-    <a href="/about" className="ml-4 bg-[#2C2C2C] hover:bg-[#D32F2F] text-white px-4 py-2 rounded-lg transition-colors font-semibold">О компании</a>
           </div>
           <div className="md:hidden">
             <button className="bg-[#2C2C2C] hover:bg-[#D32F2F] text-white p-2 rounded-lg transition-colors">

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import FlipCard from './components/FlipCard';
+import RotatingLogo from './components/RotatingLogo';
 
 const productCategories = [
   {
@@ -58,7 +59,6 @@ const productsByCategory: Record<string, { title: string; description?: string }
 import { useEffect, useRef } from 'react';
 import InfinityPartnersCarousel from './components/InfinityPartnersCarousel';
 import AboutUsSection from './components/AboutUsSection';
-import RotatingLogo from './components/RotatingLogo';
 
 function ProductShowcase() {
   const [activeCategory, setActiveCategory] = useState(productCategories[0].href);
@@ -135,23 +135,23 @@ function ProductShowcase() {
 
 export default function Home() {
   return (
-    <main className="bg-[#000000] text-white">
+    <main className="bg-[#000000] text-white ">
       {/* Hero Section */}
       <section id="hero-section" className="relative h-screen w-full overflow-hidden m-0 p-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="/citystroyhome.mp4" type="video/mp4" />
-        </video>
+      <video
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="absolute inset-0 w-full h-full object-cover z-0"
+>
+  <source src="/citystroyhome.mp4" type="video/mp4" />
+</video>
         <div className="absolute inset-0 bg-black/60 z-10"></div>
         <div className="container mx-auto px-4 h-full flex items-center relative z-20">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Комплексные решения для гражданской защиты, ЧС и промышленной безопасности
+            Комплексные решения по производству и поставке оборудования для  обеспечения безопасности
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-200">
               Поставка тренажёров, спецтехники и СИЗ для МЧС, МВД, МО и промышленных объектов
@@ -166,24 +166,28 @@ export default function Home() {
         </div>
       </section>
 
-        <section>
-  <h2 className="text-4xl md:text-5xl font-bold mb-10 text-white text-center">Мы занимаемся</h2>
-  <div className="flip-cards grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 mb-24">
-    <FlipCard
-      frontTitle="Собственное производство"
-      frontText="Изготавливаем УТК, СИЗ и оборудование по ГОСТу и ТУ"
-      backText="Работаем с МЧС, МО, МВД и корпоративными заказчиками по Казахстану"
-    />
-    <FlipCard
-      frontTitle="Гарантия и сертификация"
-      frontText="Каждый продукт проходит проверку качества"
-      backText="Предоставляем все сертификаты и техническую документацию"
-    />
-    <FlipCard
-      frontTitle="Склад и логистика"
-      frontText="Поддерживаем наличие популярных моделей"
-      backText="Быстрая отгрузка по всей территории РК и СНГ"
-    />
+        <section className="carbonBg relative py-2">
+    <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black/50 to-transparent z-10"></div>
+  <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white text-center mt-16">Наши ключевые направления</h2>
+  <div className="flip-cards grid grid-cols-1 md:grid-cols-3 gap-8 py-16 mt-8">
+  <FlipCard 
+  frontTitle="Производство"
+  frontText="Собственное производство по ГОСТ и ТУ — контроль качества на каждом этапе"
+  backText="Работаем с МЧС, МО, МВД и корпоративными клиентами по всему Казахстану"
+/>
+
+<FlipCard
+  frontTitle="Поставка"
+  frontText="Поставляем спецтехнику, СИЗ, оборудование и снаряжение для МВД, МЧС и др."
+  backText="Гарантируем наличие, сроки и полное сопровождение поставки"
+/>
+
+<FlipCard
+  frontTitle="ПНР"
+  frontText="Профессиональный монтаж и пусконаладка под ключ"
+  backText="Инженеры выезжают на объект, обучают персонал и обеспечивают поддержку"
+/>
+
   </div>
 </section>
       {/* Product Categories */}
@@ -192,7 +196,7 @@ export default function Home() {
       </section>
 
       {/* Partners Carousel */}
-      <section className="w-full py-16 carbonBg">
+      <section className="w-full carbonBg">
         <div className="container mx-auto px-4">
           
 
@@ -212,7 +216,6 @@ export default function Home() {
             <a href="/about" className="inline-block bg-[#D32F2F] hover:bg-[#B71C1C] text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors w-auto self-start">Подробнее</a>
           </div>
           <div className="flex-1 flex justify-center items-center md:justify-center md:items-center mt-8 md:mt-0">
-            {/* Вращающееся лого */}
             <RotatingLogo />
           </div>
         </div>
