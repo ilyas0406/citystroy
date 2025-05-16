@@ -24,8 +24,9 @@ import SwatCarousel from '../../components/SwatCarousel';
 import OgnevoyPoligonCarousel from '../../components/OgnevoyPoligonCarousel';
 import AvtobaclabCarousel from '../../components/AvtobaclabCarousel';
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  const product = products.find(p => p.slug === params.slug);
+export default async function ProductPage({ params }: { params: { slug: string } }) {
+  const resolvedParams = await params;
+  const product = products.find(p => p.slug === resolvedParams.slug);
   if (!product) return notFound();
 
   if (product.slug === 'teplodymokamera') {
