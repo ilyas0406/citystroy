@@ -117,7 +117,7 @@ const Header = () => {
 
     window.addEventListener('scroll', controlHeader);
     return () => window.removeEventListener('scroll', controlHeader);
-  }, [lastScrollY]);
+  }, [lastScrollY, scrollTimeout]);
 
   return (
     <header 

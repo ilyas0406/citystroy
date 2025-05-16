@@ -1,10 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import FlipCard from './components/FlipCard';
 import RotatingLogo from './components/RotatingLogo';
+import InfinityPartnersCarousel from './components/InfinityPartnersCarousel';
 
 const productCategories = [
   {
@@ -56,9 +56,7 @@ const productsByCategory: Record<string, { title: string; description?: string }
   ],
 };
 
-import { useEffect, useRef } from 'react';
-import InfinityPartnersCarousel from './components/InfinityPartnersCarousel';
-import AboutUsSection from './components/AboutUsSection';
+
 
 function ProductShowcase() {
   const [activeCategory, setActiveCategory] = useState(productCategories[0].href);

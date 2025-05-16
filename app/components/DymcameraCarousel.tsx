@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 
 const images = [
   "/dymcamera/dymcamera1.jpg",
@@ -27,9 +28,11 @@ export default function DymcameraCarousel() {
         &#8592;
       </button>
       {/* Картинка фиксированного размера по центру */}
-      <img
+      <Image
         src={images[active]}
         alt={`Дымкамера ${active + 1}`}
+        width={650}
+        height={420}
         className="w-[650px] h-[420px] object-cover rounded-2xl shadow-xl mx-auto"
       />
       {/* Правая стрелка */}

@@ -24,13 +24,13 @@ import SwatCarousel from '../../components/SwatCarousel';
 import OgnevoyPoligonCarousel from '../../components/OgnevoyPoligonCarousel';
 import AvtobaclabCarousel from '../../components/AvtobaclabCarousel';
 
-export default async function ProductPage({ params }: { params: { slug: string } }) {
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const product = products.find(p => p.slug === resolvedParams.slug);
   if (!product) return notFound();
 
   if (product.slug === 'teplodymokamera') {
-    const DymcameraCarousel = require('../../components/DymcameraCarousel').default;
+    const DymcameraCarousel = (await import('../../components/DymcameraCarousel')).default;
     return (
       <div className="min-h-screen bg-[#181818] text-white flex flex-col md:flex-row items-center justify-center p-8 gap-8">
         {/* Левая часть — текст */}

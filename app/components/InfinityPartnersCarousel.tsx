@@ -8,7 +8,7 @@ import { partners } from './PartnersLogos';
 
 export default function InfinityPartnersCarousel() {
   return (
-    <div className={`${styles.wrapper} ${styles.carbonBg}`}>
+    <div className={`${styles.wrapper} ${styles.carousel}`}>
       <h1 className={styles.title}>Партнеры</h1>
       {/* Верхний ряд — министерства, едет влево */}
       <div className={styles.carousel}>

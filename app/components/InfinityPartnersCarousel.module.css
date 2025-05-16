@@ -16,19 +16,13 @@
   position: relative;
   height: 300px;
   margin-bottom: 4px;
+  background: repeating-linear-gradient(135deg, rgba(35, 35, 35, 0.9) 0 8px, rgba(24, 24, 24, 0.9) 8px 16px);
+  background-size: 20px 20px;
+  background-color: #23232b;
 }
 .image {
   object-fit: contain;
 }
-
-:global(.carbonBg) { /* Специфичность для предотвращения перекрытия */
-  background: repeating-linear-gradient(135deg, rgba(35, 35, 35, 0.9) 0 8px, rgba(24, 24, 24, 0.9) 8px 16px);
-  background-size: 20px 20px; /* Размер текстуры */
-  background-color: #23232b;
-  background-size: 20px 20px; /* Размер текстуры */
-  background-size: cover;
-}
-
 .trackReverse {
   display: flex;
   width: fit-content;
