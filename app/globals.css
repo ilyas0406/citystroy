@@ -80,3 +80,10 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+.carbonBg { /* Специфичность для предотвращения перекрытия */
+  background: repeating-linear-gradient(135deg, rgba(35, 35, 35, 0.9) 0 8px, rgba(24, 24, 24, 0.9) 8px 16px);
+  background-size: 20px 20px; /* Размер текстуры */
+  background-color: #23232b;
+  background-size: 20px 20px; /* Размер текстуры */
+  background-size: cover;
+}

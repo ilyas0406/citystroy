@@ -1,5 +1,4 @@
 
-
 export const partners = [
   { src: '/partners/KPO.png', alt: 'KPO' },
   { src: '/partners/knb.png', alt: 'KNB' },
@@ -9,4 +8,3 @@ export const partners = [
   { src: '/partners/МЧС.png', alt: 'МЧС' },
   { src: '/partners/erg.png', alt: 'ERG' }
 ];
-
