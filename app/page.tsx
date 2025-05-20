@@ -236,12 +236,11 @@ export default function Home() {
           {/* Контактные данные */}
           <div className="flex-1 bg-[#181818] rounded-2xl shadow-lg p-8 flex flex-col justify-center">
             <h2 className="text-2xl font-bold mb-6">Контакты</h2>
-            <div className="space-y-4 text-lg">
-              <div><span className="font-semibold">Юридический адрес:</span> г. Актобе, ул. Газизы Жубановой 39Н, н/п 44</div>
-              <div><span className="font-semibold">Фактический адрес:</span> г. Актобе, ул. Газизы Жубановой 39Н, офис 303, БЦ «Апельсин»</div>
-              <div><span className="font-semibold">Телефон:</span> <a href="tel:87132415637" className="underline hover:text-primary">8 (7132) 415637</a></div>
+            <div className="space-y-4 text-lg ">
+              <div><span className="font-semibold">г. Актобе,</span> ул. Газизы Жубановой 39Н, н/п 44</div>
+              <div><span className="font-semibold">г. Астана,</span> пр. Мангилик Ел 37, офис 62</div>
+              <div><span className="font-semibold">Телефон:</span> <a href="tel:+7 (7172) 24-96-73" className="underline hover:text-primary">+7 (7172) 24-96-73</a></div>
               <div><span className="font-semibold">E-mail:</span> <a href="mailto:citystroy2030@mail.ru" className="underline hover:text-primary">citystroy2030@mail.ru</a></div>
-              <div><span className="font-semibold">Контактное лицо:</span> Асхат Максатович Жалимбетов, <a href="tel:+77762528252" className="underline hover:text-primary">+7 776 252 82 52</a></div>
             </div>
           </div>
         </div>

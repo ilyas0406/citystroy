@@ -1,5 +1,4 @@
 import React from "react";
-import TimelineSection from "./TimelineSection";
 
 export default function AboutUsSection() {
   return (
@@ -46,9 +45,6 @@ export default function AboutUsSection() {
             </div>
           </div>
         </div>
-      </section>
-      <section className="carbonBg">
-      <TimelineSection />
       </section>
     </>
     

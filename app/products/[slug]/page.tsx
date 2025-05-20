@@ -30,28 +30,26 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   if (!product) return notFound();
 
   if (product.slug === 'teplodymokamera') {
-    const DymcameraCarousel = (await import('../../components/DymcameraCarousel')).default;
     return (
       <div className="min-h-screen bg-[#181818] text-white flex flex-col md:flex-row items-center justify-center p-8 gap-8">
         {/* Левая часть — текст */}
         <div className="md:w-1/2 w-full flex flex-col justify-center items-start max-w-xl">
           <h1 className="text-4xl font-bold mb-6">Теплодымокамера</h1>
-          <div className="text-gray-300 text-base mb-2">
-            Многофункциональный учебно-тренировочный комплекс для отработки действий при пожаре и в условиях ЧС. Используется для практической подготовки спасателей и пожарных в реалистичных условиях.
-            <br/>
-            <ul className="list-disc ml-6">
-              <li>тренажерную зону;</li>
-              <li>Систему задымления и контактных полов</li>
-              <li>Видеонаблюдение, инфракрасное слежение</li>
-              <li>Пульт управления, вентиляцию, связь</li>
-              <li>Световые и звуковые эффекты</li>
-              <li>Модули для спасения из шахт, завалов, колодцев</li>
-            </ul>
+          <div className="text-gray-300 text-base space-y-4">
+            <p>Учебно-тренировочный комплекс «Теплодымокамера» (УТК) — это специализированный многофункциональный модульный комплекс, изготовленный на заказ с учетом всех требований безопасности. Предназначен для подготовки спасателей, пожарных и сотрудников специальных подразделений.</p>
+            <p>Комплекс моделирует реальные сценарии пожара и аварийных ситуаций, позволяя отрабатывать навыки тушения возгораний, проведения спасательных операций и ликвидации последствий чрезвычайных ситуаций. Занятия в УТК способствуют развитию физической выносливости, адаптации к высоким температурам и устойчивости к эмоциональным и стрессовым нагрузкам.</p>
           </div>
         </div>
-        {/* Правая часть — карусель */}
+        {/* Правая часть — изображение */}
         <div className="md:w-1/2 w-full flex justify-center items-center">
-          <DymcameraCarousel />
+          <Image 
+            src="/dymcamera/dymcamera5.jpg"
+            alt="Теплодымокамера"
+            width={800}
+            height={600}
+            className="rounded-lg shadow-xl object-cover"
+            priority
+          />
         </div>
       </div>
     );
