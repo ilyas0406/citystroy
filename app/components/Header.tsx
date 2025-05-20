@@ -29,6 +29,19 @@ const Header = () => {
   ];
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsMobileMenuOpen(prev => !prev);
+  };
+
+  const closeMobileMenu = (e?: React.MouseEvent) => {
+    if (e) {
+      e.stopPropagation();
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   const handleMouseEnter = () => {
     setIsDropdownOpen(true);
@@ -90,6 +103,18 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
 
+  // Закрываем мобильное меню при изменении размера окна на десктопный
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   useEffect(() => {
     const controlHeader = () => {
       const currentScrollY = window.scrollY;
@@ -146,11 +171,67 @@ const Header = () => {
             {menuItems.map(renderMenuItem)}
           </div>
           <div className="md:hidden">
-            <button className="bg-[#2C2C2C] hover:bg-[#D32F2F] text-white p-2 rounded-lg transition-colors">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+            <button 
+              onClick={toggleMobileMenu}
+              className="bg-[#2C2C2C] hover:bg-[#D32F2F] text-white p-2 rounded-lg transition-colors"
+              aria-label="Меню"
+            >
+              {isMobileMenuOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
+          </div>
+          
+          {/* Мобильное меню */}
+          <div 
+            className={`md:hidden fixed inset-0 bg-black/80 z-40 transition-all duration-300 transform ${
+              isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+            }`}
+            onClick={closeMobileMenu}
+          >
+            <div 
+              className="absolute top-20 right-4 bg-[#2C2C2C] rounded-lg shadow-lg w-64 p-4 flex flex-col space-y-2"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Link 
+                href="/" 
+                className="block px-4 py-3 text-base hover:bg-[#D32F2F] hover:text-white rounded-lg transition-colors"
+                onClick={closeMobileMenu}
+              >
+                Главная
+              </Link>
+              {menuItems.map((item) => (
+                <div key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="block px-4 py-3 text-base hover:bg-[#D32F2F] hover:text-white rounded-lg transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    {item.title}
+                  </Link>
+                  {item.subItems && isMobileMenuOpen && (
+                    <div className="ml-4 mt-1 space-y-1">
+                      {item.subItems.map((subItem) => (
+                        <Link
+                          key={subItem.href}
+                          href={subItem.href}
+                          className="block px-4 py-2 text-sm text-gray-300 hover:bg-[#D32F2F] hover:text-white rounded-lg transition-colors"
+                          onClick={closeMobileMenu}
+                        >
+                          {subItem.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </nav>
       </div>
