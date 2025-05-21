@@ -1,6 +1,6 @@
 .wrapper {
   width: 100%;
-  padding: 0 0 24px 0;
+  padding: 0 0 12px 0;
   background: none;
 }
 .title {
@@ -14,8 +14,8 @@
   overflow: hidden;
   width: 100%;
   position: relative;
-  height: 300px;
-  margin-bottom: 4px;
+  height: 250px;
+  margin-bottom: 2px;
 }
 .image {
   object-fit: contain;
@@ -42,13 +42,13 @@
   animation: scroll 60s linear infinite;
 }
 .logo {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   display: flex;
-  flex-direction: column; /* Чтобы элементы шли сверху вниз */
-  align-items: center; /* Центровка по горизонтали */
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 0 12px;
+  padding: 0 8px;
   background: transparent;
   text-align: center;
 }

@@ -99,10 +99,6 @@ const Header = () => {
     );
   };
 
-  const [showHeader, setShowHeader] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
-
   // Закрываем мобильное меню при изменении размера окна на десктопный
   useEffect(() => {
     const handleResize = () => {
@@ -115,41 +111,8 @@ const Header = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    const controlHeader = () => {
-      const currentScrollY = window.scrollY;
-
-      if (scrollTimeout) {
-        clearTimeout(scrollTimeout);
-      }
-
-      if (currentScrollY > 0) {
-        if (currentScrollY > lastScrollY) {
-          setShowHeader(false);
-        } else {
-          setScrollTimeout(
-            setTimeout(() => {
-              setShowHeader(true);
-            }, 150)
-          );
-        }
-      } else {
-        setShowHeader(true);
-      }
-
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener('scroll', controlHeader);
-    return () => window.removeEventListener('scroll', controlHeader);
-  }, [lastScrollY, scrollTimeout]);
-
   return (
-    <header 
-      className={`bg-[#000000]/80 backdrop-blur-sm text-white fixed w-full z-50 transition-all duration-500 ${
-        showHeader ? 'translate-y-0' : '-translate-y-full'
-      }`}
-    >
+    <header className="bg-[#000000]/80 backdrop-blur-sm text-white fixed w-full z-50">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex justify-between items-center h-18">
           <Link href="/">

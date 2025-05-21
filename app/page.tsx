@@ -1,133 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
 import FlipCard from './components/FlipCard';
 import RotatingLogo from './components/RotatingLogo';
 import InfinityPartnersCarousel from './components/InfinityPartnersCarousel';
 
-const productCategories = [
-  {
-    title: 'Учебно-тренировочные комплексы',
-    description: 'Тренажёры для подготовки спасателей и пожарных',
-    href: '/training-complexes'
-  },
-  {
-    title: 'Спецтехника',
-    description: 'Авто для ликвидации ЧС и медпомощи',
-    href: '/special-vehicles'
-  },
-  {
-    title: 'Средства индивидуальной защиты',
-    description: 'Защитные решения для работы в огне, химии, воде',
-    href: '/siz'
-  },
-  {
-    title: 'Специальное оборудование',
-    description: 'Спецтехника для сил МЧС, МВД, МО',
-    href: '/equipment'
-  }
-];
-
-// Примерные продукты для каждой категории
-const productsByCategory: Record<string, { title: string; description?: string }[]> = {
-  '/training-complexes': [
-    { title: 'Теплодымокамера' },
-    { title: 'Сейсмотренажер' },
-    { title: 'Огневой полигон' },
-  ],
-  '/special-vehicles': [
-    { title: 'АБР (Автомобиль быстрого реагирования)' },
-    { title: 'Реанимобиль A/B/C' },
-    { title: 'АСА (аварийно-спасательный автомобиль)' },
-    { title: 'Автобаклаборатория' },
-  ],
-  '/siz': [
-    { title: 'Воздушно дыхательный аппарат - MSA (Германия)' },
-    { title: 'Водолазный дыхательный аппарат' },
-    { title: 'Боевая одежда пожарного - БОП' },
-    { title: 'Снаряжения для спецназа' },
-    { title: 'Костюм изолирующий химический закрытого типа' },
-    { title: 'Противогаз' },
-  ],
-  '/equipment': [
-    { title: 'Стационарный компрессор (высокого и среднего давления)' },
-    { title: 'Мобильный компрессор (высокого и среднего давления)' },
-  ],
-};
 
 
 
-function ProductShowcase() {
-  const [activeCategory, setActiveCategory] = useState(productCategories[0].href);
-  const products = productsByCategory[activeCategory] || [];
 
-  return (
-    <div className="flex flex-col md:flex-row w-full h-full min-h-[340px] rounded-none overflow-hidden shadow-2xl relative z-20" style={{boxShadow: '0 12px 32px 0 rgba(0,0,0,0.4)'}}>
 
-      {/* Левая часть — категории */}
-      <div className="md:w-1/2 w-full bg-[#23232b] flex flex-col gap-4 p-8 justify-center h-full relative">
-        <div className="mb-8">
-          <span className="block text-3xl md:text-4xl font-black text-white/80 tracking-tight mb-6">Наши продукты</span>
-        </div>
-        {productCategories.map((cat) => (
-          <button
-            key={cat.href}
-            onClick={() => setActiveCategory(cat.href)}
-            className={`w-full text-left p-6 rounded-lg transition-colors font-semibold border-2 ${
-              activeCategory === cat.href
-                ? 'bg-[#D32F2F] border-[#D32F2F] text-white shadow-lg'
-                : 'bg-[#181818] border-transparent text-gray-200 hover:bg-[#2C2C2C]'
-            }`}
-          >
-            <div className="text-xl mb-1">{cat.title}</div>
-            <div className="text-gray-400 text-sm">{cat.description}</div>
-          </button>
-        ))}
-      </div>
-      {/* Правая часть — продукты */}
-      <div className="md:w-1/2 w-full bg-[#15161a] flex flex-col gap-6 justify-center p-8 h-full">
-        {products.length === 0 ? (
-          <div className="text-gray-400">Нет продуктов в этой категории.</div>
-        ) : (
-          products.map((prod, idx) => {
-              // Генерируем slug для ссылки
-              const slugs: Record<string, string> = {
-                'Теплодымокамера': 'teplodymokamera',
-                'Сейсмотренажер': 'seismotrenazher',
-                'Огневой полигон': 'ognevoi-poligon',
-                'АБР (Автомобиль быстрого реагирования)': 'abr',
-                'Реанимобиль A/B/C': 'reanimobil',
-                'АСА (аварийно-спасательный автомобиль)': 'aca',
-                'Автобаклаборатория': 'avtobaklaboratoriya',
-                'Воздушно дыхательный аппарат - MSA (Германия)': 'msa',
-                'Водолазный дыхательный аппарат': 'vodolaz',
-                'Боевая одежда пожарного - БОП': 'bop',
-                'Снаряжения для спецназа': 'snaryazhenie',
-                'Костюм изолирующий химический закрытого типа': 'kostyum-ximicheskii',
-                'Противогаз': 'protivogaz',
-                'Стационарный компрессор (высокого и среднего давления)': 'kompressor-statsionar',
-                'Мобильный компрессор (высокого и среднего давления)': 'kompressor-mobil',
-              };
-              const slug = slugs[prod.title];
-              return (
-                <div key={idx} className="border-b border-[#333] pb-4 mb-4 last:mb-0 last:pb-0 last:border-b-0">
-                  {slug ? (
-                    <Link href={`/products/${slug}`} className="text-2xl font-bold mb-1 text-primary hover:underline">
-                      {prod.title}
-                    </Link>
-                  ) : (
-                    <div className="text-2xl font-bold mb-1">{prod.title}</div>
-                  )}
-                  <div className="text-gray-300">{prod.description}</div>
-                </div>
-              );
-            })
-        )}
-      </div>
-    </div>
-  );
-}
 
 
 
@@ -164,45 +46,6 @@ export default function Home() {
         </div>
       </section>
 
-        <section className="carbonBg relative py-2">
-    <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black/50 to-transparent z-10"></div>
-  <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white text-center mt-16">Наши ключевые направления</h2>
-  <div className="flip-cards grid grid-cols-1 md:grid-cols-3 gap-8 py-16 mt-8">
-  <FlipCard 
-  frontTitle="Производство"
-  frontText="Собственное производство по ГОСТ и ТУ — контроль качества на каждом этапе"
-  backText="Работаем с МЧС, МО, МВД и корпоративными клиентами по всему Казахстану"
-/>
-
-<FlipCard
-  frontTitle="Поставка"
-  frontText="Поставляем спецтехнику, СИЗ, оборудование и снаряжение для МВД, МЧС и др."
-  backText="Гарантируем наличие, сроки и полное сопровождение поставки"
-/>
-
-<FlipCard
-  frontTitle="ПНР"
-  frontText="Профессиональный монтаж и пусконаладка под ключ"
-  backText="Инженеры выезжают на объект, обучают персонал и обеспечивают поддержку"
-/>
-
-  </div>
-</section>
-      {/* Product Categories */}
-      <section className="w-full h-screen min-h-screen flex items-center justify-center m-0 p-0 bg-[#23232b]">
-<ProductShowcase />
-      </section>
-
-      {/* Partners Carousel */}
-      <section className="w-full carbonBg">
-        <div className="container mx-auto px-4">
-          
-
-<InfinityPartnersCarousel />
-
-        </div>
-      </section>
-
       {/* About Company */}
       <section className="w-full bg-[#181818] py-12 text-white">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center md:items-stretch gap-8 w-full">
@@ -216,6 +59,29 @@ export default function Home() {
           <div className="flex-1 flex justify-center items-center md:justify-center md:items-center mt-8 md:mt-0">
             <RotatingLogo />
           </div>
+        </div>
+      </section>
+
+      {/* Key Directions */}
+      <section className="carbonBg relative py-2">
+        <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black/50 to-transparent z-10"></div>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white text-center mt-16">Наши ключевые направления</h2>
+        <div className="flip-cards grid grid-cols-1 md:grid-cols-3 gap-8 py-16 mt-8">
+          <FlipCard 
+            frontTitle="Производство"
+            frontText="Собственное производство по ГОСТ и ТУ — контроль качества на каждом этапе"
+            backText="Работаем с МЧС, МО, МВД и корпоративными клиентами по всему Казахстану"
+          />
+          <FlipCard
+            frontTitle="Поставка"
+            frontText="Поставляем спецтехнику, СИЗ, оборудование и снаряжение для МВД, МЧС и др."
+            backText="Гарантируем наличие, сроки и полное сопровождение поставки"
+          />
+          <FlipCard
+            frontTitle="ПНР"
+            frontText="Профессиональный монтаж и пусконаладка под ключ"
+            backText="Инженеры выезжают на объект, обучают персонал и обеспечивают поддержку"
+          />
         </div>
       </section>
 
@@ -246,6 +112,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Partners Carousel */}
+      <section className="w-full carbonBg">
+        <div className="container mx-auto px-4">
+          <InfinityPartnersCarousel />
+        </div>
+      </section>
     </main>
   );
 }
