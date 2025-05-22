@@ -3,19 +3,13 @@ import Image from 'next/image';
 export default function Spetstehnika() {
   const products = [
     {
-      title: 'Автомобиль быстрого реагирования (AБР)',
-      description: 'Оперативный транспорт для быстрого реагирования в чрезвычайных ситуациях',
-      image: '/Abr/abr.avif',
-      slug: 'abr'
-    },
-    {
       title: 'Реанимобиль A/B/C',
       description: 'Специализированный медицинский автомобиль для экстренной помощи',
       image: '/reanimobil/reanimobil.avif',
       slug: 'reanimobil'
     },
     {
-      title: 'АСА (аварийно-спасательный автомобиль)',
+      title: 'Аварийно-спасательный автомобиль',
       description: 'Автомобиль для ликвидации чрезвычайных ситуаций и проведения спасательных работ',
       image: '/ASA/asa.avif',
       slug: 'aca'

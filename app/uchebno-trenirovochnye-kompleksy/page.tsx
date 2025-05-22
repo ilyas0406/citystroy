@@ -5,7 +5,7 @@ export default function UchebnoTrenirovochnyeKompleksy() {
     {
       title: 'Теплодымокамера',
       description: 'Тренажёр для отработки навыков спасения в условиях высокой температуры и задымления',
-      image: '/dymcamera/dymcamera1.jpg',
+      image: '/dymcamera/dymcamera5.jpg',
       slug: 'teplodymokamera'
     },
     {
@@ -17,7 +17,7 @@ export default function UchebnoTrenirovochnyeKompleksy() {
     {
       title: 'Огневой полигон',
       description: 'Специализированная площадка для подготовки пожарных и спасателей',
-      image: '/ognevoipoligon/ognevoypoligon.avif',
+      image: '/ognevoipoligon/ognevoypoligon1.jpg',
       slug: 'ognevoi-poligon'
     }
   ];

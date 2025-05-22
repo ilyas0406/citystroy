@@ -64,18 +64,16 @@ const Footer = () => {
                 <h3 className="text-xl font-bold mb-4">Компания</h3>
                 <ul className="space-y-2">
                   <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">О нас</Link></li>
-                  <li><Link href="/projects" className="text-gray-400 hover:text-white transition-colors">Проекты</Link></li>
-                  <li><Link href="/contacts" className="text-gray-400 hover:text-white transition-colors">Контакты</Link></li>
+                  <li><Link href="/contact-form" className="text-gray-400 hover:text-white transition-colors">Контакты</Link></li>
                 </ul>
               </div>
               
               <div>
                 <h3 className="text-xl font-bold mb-4">Продукция</h3>
                 <ul className="space-y-2">
-                  <li><Link href="/training-complexes" className="text-gray-400 hover:text-white transition-colors">Учебные комплексы</Link></li>
-                  <li><Link href="/special-vehicles" className="text-gray-400 hover:text-white transition-colors">Спецтехника</Link></li>
-                  <li><Link href="/siz" className="text-gray-400 hover:text-white transition-colors">СИЗ</Link></li>
-                  <li><Link href="/equipment" className="text-gray-400 hover:text-white transition-colors">Оборудование</Link></li>
+                  <li><Link href="/uchebno-trenirovochnye-kompleksy" className="text-gray-400 hover:text-white transition-colors">Учебные комплексы</Link></li>
+                  <li><Link href="/spetstehnika" className="text-gray-400 hover:text-white transition-colors">Спецтехника</Link></li>
+                  <li><Link href="/sredstva-individualnoy-zashchity" className="text-gray-400 hover:text-white transition-colors">СИЗ</Link></li>
                 </ul>
               </div>
             </div>

@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function SredstvaIndividualnoyZashchity() {
   const products = [
     {
-      title: 'Воздушно-дыхательный аппарат - MSA (Германия)',
+      title: 'Воздушно-дыхательный аппарат',
       description: 'Защита органов дыхания для пожарных и спасателей',
       image: '/msa/msa.png',
       slug: 'msa'
@@ -31,12 +31,6 @@ export default function SredstvaIndividualnoyZashchity() {
       description: 'Защитный костюм для работы с опасными химическими веществами',
       image: '/kostyum-ximicheskii/kostyum-ximicheskii.jpg',
       slug: 'kostyum-ximicheskii'
-    },
-    {
-      title: 'Противогаз',
-      description: 'Полнолицевая маска для защиты органов дыхания',
-      image: '/protivogaz/protivogaz.jpeg',
-      slug: 'protivogaz'
     }
   ];
 

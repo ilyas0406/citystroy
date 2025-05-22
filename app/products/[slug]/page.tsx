@@ -23,6 +23,7 @@ import Image from 'next/image';
 import SwatCarousel from '../../components/SwatCarousel';
 import OgnevoyPoligonCarousel from '../../components/OgnevoyPoligonCarousel';
 import AvtobaclabCarousel from '../../components/AvtobaclabCarousel';
+import ACACarousel from '../../components/ACACarousel';
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
@@ -84,54 +85,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="text-gray-300 text-base mb-2 max-w-2xl">
             Полномасштабный учебно-тренировочный комплекс, предназначенный для подготовки пожарных и спасателей к работе в самых сложных и опасных условиях. Комплекс позволяет максимально приблизить условия реальных чрезвычайных ситуаций, включая сложнейшие сценарии с огнем, дымом, высокой влажностью и замкнутыми пространствами. Используется для полноценной профессиональной подготовки личного состава служб спасения, формирования устойчивых навыков действий в экстремальных условиях.
-
-            <b>Возможности комплекса:</b>
-            <ul className="list-disc ml-6">
-              <li>Отработка навыков тушения и применения спецтехники</li>
-              <li>Работа в защитных костюмах и СИЗОД</li>
-              <li>Тренировки по спасению людей в задымлённой зоне</li>
-              <li>Развитие устойчивости к стрессовым факторам пожара</li>
-            </ul>
-
-            <b>Характеристики:</b>
-            <ul className="list-disc ml-6">
-              <li>Контейнеры от 2 до 12 м</li>
-              <li>Камеры сжигания до 201 т с люками и цепями</li>
-              <li>Система контроля температуры (Bluetooth)</li>
-              <li>Лестницы, двери, крыши с элементами нагрузки</li>
-              <li>Противопожарные и аварийные элементы</li>
-            </ul>
-            
           </div>
           <div className="md:w-1/2 flex justify-center items-center">
             <OgnevoyPoligonCarousel />
-          </div>
-        </div>
-      </>
-    ),
-    'abr': (
-      <>
-        <h1 className="text-4xl font-bold mb-6">Автомобиль быстрого реагирования (АБР)</h1>
-        <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="text-gray-300 text-base mb-2 max-w-2xl">
-            Автомобиль быстрого реагирования – это пожарный автомобиль первой помощи.<br/><br/>
-            <b>Назначение:</b>
-            <ul className="list-disc ml-6">
-              <li>Доставка к месту пожара (аварии) личного состава, запаса огнетушащих веществ, технического вооружения и аварийно-спасательного оборудования и инструмента;</li>
-              <li>Проведение аварийно-спасательных работ на месте ДТП;</li>
-              <li>Тушение пожаров классов А, Б, С при помощи подачи воды и пены;</li>
-              <li>Выполнение задач по ликвидации возгораний и последствий ДТП;</li>
-              <li>Штатная кабина для размещения до 6 человек боевого расчета.</li>
-            </ul>
-          </div>
-          <div className="md:w-1/2 flex justify-center items-center">
-            <Image 
-              src="/Abr/abr.avif"
-              alt="Автомобиль быстрого реагирования"
-              width={650}
-              height={500}
-              className="rounded-2xl shadow-xl object-fill"
-            />
           </div>
         </div>
       </>
@@ -164,23 +120,20 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       <>
         <h1 className="text-4xl font-bold mb-6">Аварийно-спасательный автомобиль (АСА)</h1>
         <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="text-gray-300 text-base mb-2 max-w-2xl">
-            <p className="mb-4">Аварийно-спасательный автомобиль предназначен для оперативного реагирования в чрезвычайных ситуациях и оснащён всем необходимым для проведения спасательных работ:</p>
+          <div className="text-gray-300 text-base space-y-4 max-w-2xl">
+            <p>Аварийно-спасательный автомобиль — это специализированный пожарный автомобиль первой помощи, предназначенный для оперативной доставки пожарных подразделений к месту чрезвычайных ситуаций, включая пожары, дорожно-транспортные происшествия и техногенные аварии.</p>
+            
+            <p>Аварийно-спасательный автомобиль выполняет следующие задачи:</p>
             <ul className="list-disc ml-6 space-y-2">
-              <li>Тушение очагов возгорания с использованием воды и пенообразователей;</li>
-              <li>Оценка оперативной обстановки и передача данных в штаб реагирования;</li>
-              <li>Выполнение аварийно-спасательных работ при ДТП и других ЧС;</li>
-              <li>Оказание первой медицинской помощи пострадавшим на месте происшествия.</li>
+              <li>доставка личного состава, огнетушащих веществ, технического оснащения и аварийно-спасательного оборудования к месту происшествия;</li>
+              <li>проведение аварийно-спасательных работ, включая ликвидацию последствий ДТП;</li>
+              <li>оказание первичной помощи пострадавшим и обеспечение безопасности на месте ЧС.</li>
             </ul>
+            
+            <p>По требованию Заказчика аварийно-спасательный автомобиль может быть изготовлен на базе различных шасси, таких как Toyota Hilux, Iveco, Газель, Ford, КамАЗ.</p>
           </div>
           <div className="md:w-1/2 flex justify-center items-center">
-            <Image 
-              src="/asa/asa.avif"
-              alt="Аварийно-спасательный автомобиль"
-              width={650}
-              height={500}
-              className="rounded-2xl shadow-xl object-fill"
-            />
+            <ACACarousel />
           </div>
         </div>
       </>
@@ -207,7 +160,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     ),
     'msa': (
       <>
-        <h1 className="text-4xl font-bold mb-6">Воздушно-дыхательный аппарат MSA (Германия)</h1>
+        <h1 className="text-4xl font-bold mb-6">Воздушно-дыхательный аппарат</h1>
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="text-gray-300 text-lg mb-2 max-w-2xl">
             Воздушно-дыхательный аппарат предназначен для защиты органов дыхания пожарных и спасателей в условиях сильного задымления.<br/><br/>
@@ -324,83 +277,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <Image 
               src="/kostyum-ximicheskii/kostyum-ximicheskii.jpg"
               alt="Костюм изолирующий химический"
-              width={450}
-              height={300}
-              className="rounded-xl shadow-lg object-cover"
-            />
-          </div>
-        </div>
-      </>
-    ),
-    'protivogaz': (
-      <>
-        <h1 className="text-4xl font-bold mb-6">Противогаз</h1>
-        <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="text-gray-300 text-xl mb-4 max-w-3xl">
-            Полнолицевая маска 3S фирмы MSA AUER — мировой лидер по количеству проданных масок.<br/><br/>
-            <b>Преимущества:</b>
-            <ul className="list-disc ml-6 space-y-3 text-lg">
-              <li>Мягкий и удобный обтюратор;</li>
-              <li>Широкие ремни и глубокий подмасочник для плотного прилегания;</li>
-              <li>Смотровое стекло из ударопрочного поликарбоната;</li>
-              <li>Быстрое надевание и снятие даже под шлемом;</li>
-              <li>Возможность носить на груди в постоянной готовности.</li>
-            </ul>
-          </div>
-          <div className="md:w-1/2 flex justify-center items-center">
-            <Image 
-              src="/protivogaz/protivogaz.jpeg"
-              alt="Противогаз MSA AUER"
-              width={450}
-              height={300}
-              className="rounded-xl shadow-lg object-cover"
-            />
-          </div>
-        </div>
-      </>
-    ),
-    'kompressor-statsionar': (
-      <>
-        <h1 className="text-4xl font-bold mb-6">Стационарный компрессор (высокого и среднего давления)</h1>
-        <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="text-gray-300 text-xl mb-4 max-w-3xl">
-            Специальное оборудование для пожарных частей и промышленных объектов.<br/><br/>
-            <b>Характеристики:</b>
-            <ul className="list-disc ml-6 space-y-3 text-lg">
-              <li>Производительность и надежность для заправки дыхательных аппаратов и баллонов;</li>
-              <li>Работа в интенсивных режимах;</li>
-              <li>Современные системы фильтрации и контроля.</li>
-            </ul>
-          </div>
-          <div className="md:w-1/2 flex justify-center items-center">
-            <Image 
-              src="/compressor/91.avif"
-              alt="Стационарный компрессор"
-              width={450}
-              height={300}
-              className="rounded-xl shadow-lg object-cover"
-            />
-          </div>
-        </div>
-      </>
-    ),
-    'kompressor-mobil': (
-      <>
-        <h1 className="text-4xl font-bold mb-6">Мобильный компрессор (высокого и среднего давления)</h1>
-        <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="text-gray-300 text-xl mb-4 max-w-3xl">
-            Мобильная версия компрессора для оперативной работы в полевых условиях.<br/><br/>
-            <b>Преимущества:</b>
-            <ul className="list-disc ml-6 space-y-3 text-lg">
-              <li>Компактность и мобильность;</li>
-              <li>Быстрая заправка дыхательных аппаратов;</li>
-              <li>Использование в аварийных ситуациях и при ЧС.</li>
-            </ul>
-          </div>
-          <div className="md:w-1/2 flex justify-center items-center">
-            <Image 
-              src="/compressormobil/92.avif"
-              alt="Мобильный компрессор"
               width={450}
               height={300}
               className="rounded-xl shadow-lg object-cover"

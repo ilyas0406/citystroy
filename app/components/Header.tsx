@@ -20,8 +20,7 @@ const Header = () => {
         { title: 'Учебно-тренировочные комплексы', href: '/uchebno-trenirovochnye-kompleksy' },
         { title: 'Спецтехника для сил МЧС МВД и МО', href: '/spetstehnika' },
         { title: 'Средства Индивидуальной Защиты', href: '/sredstva-individualnoy-zashchity' },
-        { title: 'Специальное оборудование', href: '/spetsialnoe-oborudovanie' }
-      ]
+        ]
     },
 
     { title: 'О компании', href: '/about' },

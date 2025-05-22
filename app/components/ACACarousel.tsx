@@ -3,12 +3,11 @@ import { useState } from "react";
 import Image from "next/image";
 
 const images = [
-  "/ognevoipoligon/ognevoypoligon.jpg",
-  "/ognevoipoligon/ognevoypoligon1.jpg",
-  "/ognevoipoligon/ognevoypoligon2.jpeg",
+  "/asa/asa.avif",
+  "/asa/asa1.jpg",
 ];
 
-export default function OgnevoyPoligonCarousel() {
+export default function ACACarousel() {
   const [active, setActive] = useState(0);
   const total = images.length;
 
@@ -30,7 +29,7 @@ export default function OgnevoyPoligonCarousel() {
       {/* Картинка фиксированного размера по центру */}
       <Image
         src={images[active]}
-        alt={`Огневой полигон ${active + 1}`}
+        alt={`Аварийно-спасательный автомобиль ${active + 1}`}
         width={650}
         height={900}
         className="w-[650px] h-[500px] object-fill rounded-2xl shadow-xl mx-auto"
