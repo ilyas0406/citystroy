@@ -4,6 +4,8 @@ const products = [
   { slug: 'teplodymokamera', title: 'Теплодымокамера' },
   { slug: 'seismotrenazher', title: 'Сейсмотренажер' },
   { slug: 'ognevoi-poligon', title: 'Огневой полигон' },
+  { slug: 'modulnyj-strelkovyj-tir', title: 'Модульный стрелковый тир' },
+  { slug: 'shturmovik', title: 'Штурмовик' },
   { slug: 'abr', title: 'АБР (Автомобиль быстрого реагирования)' },
   { slug: 'reanimobil', title: 'Реанимобиль A/B/C' },
   { slug: 'aca', title: 'АСА (аварийно-спасательный автомобиль)' },

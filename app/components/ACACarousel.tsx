@@ -3,8 +3,8 @@ import { useState } from "react";
 import Image from "next/image";
 
 const images = [
-  "/asa/asa.avif",
-  "/asa/asa1.jpg",
+  "/ASA/asa.avif",
+  "/ASA/asa1.jpg",
 ];
 
 export default function ACACarousel() {
@@ -30,9 +30,9 @@ export default function ACACarousel() {
       <Image
         src={images[active]}
         alt={`Аварийно-спасательный автомобиль ${active + 1}`}
-        width={650}
-        height={900}
-        className="w-[650px] h-[500px] object-fill rounded-2xl shadow-xl mx-auto"
+        width={600}
+        height={450}
+        className="w-[650px] h-[450px] object-fill rounded-2xl shadow-xl mx-auto"
       />
       {/* Правая стрелка */}
       {total > 1 && (

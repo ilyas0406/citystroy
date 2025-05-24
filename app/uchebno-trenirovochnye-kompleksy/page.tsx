@@ -19,6 +19,18 @@ export default function UchebnoTrenirovochnyeKompleksy() {
       description: 'Специализированная площадка для подготовки пожарных и спасателей',
       image: '/ognevoipoligon/ognevoypoligon1.jpg',
       slug: 'ognevoi-poligon'
+    },
+    {
+      title: 'Модульный стрелковый тир',
+      description: '',
+      image: '/tir/tir.jpg',
+      slug: 'modulnyj-strelkovyj-tir'
+    },
+    {
+      title: 'Штурмовик',
+      description: '',
+      image: '/shturmovik/shturmovik.jpg',
+      slug: 'shturmovik'
     }
   ];
 

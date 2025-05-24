@@ -17,7 +17,7 @@ export default function Spetstehnika() {
     {
       title: 'Автобаклаборатория',
       description: 'Мобильный комплекс для проведения санитарно-эпидемиологических исследований',
-      image: '/avtobaclab/avtobaclab.avif',
+      image: '/avtobaclab/Avtobaclab.jpg',
       slug: 'avtobaklaboratoriya'
     }
   ];

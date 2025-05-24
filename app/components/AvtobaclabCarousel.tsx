@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 const images = [
-  "/avtobaclab/Avtobaclab.avif",
+  "/avtobaclab/Avtobaclab.jpg",
   "/avtobaclab/Avtobaclab1.avif"
 ];
 
