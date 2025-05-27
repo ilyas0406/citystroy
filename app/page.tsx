@@ -46,22 +46,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Company */}
-      <section className="w-full bg-[#181818] py-12 text-white">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center md:items-stretch gap-8 w-full">
-          <div className="flex-1 flex flex-col justify-center max-w-5xl text-left break-words" style={{ hyphens: 'auto' }}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-left">О компании</h2>
-            <p className="text-base md:text-lg mb-6 text-left" style={{ maxWidth: '100%' }}>
-              СитиСтрой-2030 — надёжный поставщик учебно-тренировочных комплексов, специализированного оборудования и строительных решений в сфере промышленной безопасности. С 2010 года реализуем проекты по всей территории Казахстана для государственных и частных заказчиков — и для государственных, и для частных предприятий. Стабильно обеспечиваем качество, безопасность и современные технологии для ваших задач.
-            </p>
-            <a href="/about" className="inline-block bg-[#D32F2F] hover:bg-[#B71C1C] text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors w-auto self-start">Подробнее</a>
-          </div>
-          <div className="flex-1 flex justify-center items-center md:justify-center md:items-center mt-8 md:mt-0">
-            <RotatingLogo />
-          </div>
-        </div>
-      </section>
-
       {/* Key Directions */}
       <section className="carbonBg relative py-2">
         <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black/50 to-transparent z-10"></div>
@@ -82,6 +66,24 @@ export default function Home() {
             frontText="Профессиональный монтаж и пусконаладка под ключ"
             backText="Инженеры выезжают на объект, обучают персонал и обеспечивают поддержку"
           />
+        </div>
+      </section>
+
+      {/* About Company */}
+      <section className="w-full bg-[#181818] py-12 text-white">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center md:items-stretch gap-8 w-full">
+          <div className="flex-1 flex flex-col justify-center max-w-5xl text-left break-words" style={{ hyphens: 'auto' }}>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-left">О компании</h2>
+            <p className="text-base md:text-lg mb-6 text-left" style={{ maxWidth: '100%' }}>
+            СитиСтрой 2030 — надёжный производитель и поставщик  учебно-тренировочных комплексов,  специализированного оборудования и инженерных решений в области промышленной безопасности.
+С 2010 года мы успешно реализуем проекты по всей территории Казахстана, работая как с государственными структурами, так и с частным сектором.
+Мы предлагаем нашим партнерам решения, сочетающие качество, безопасность и современные технологии, обеспечивая стабильность и результат на каждом этапе сотрудничества.
+            </p>
+            <a href="/about" className="inline-block bg-[#D32F2F] hover:bg-[#B71C1C] text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors w-auto self-start">Подробнее</a>
+          </div>
+          <div className="flex-1 flex justify-center items-center md:justify-center md:items-center mt-8 md:mt-0">
+            <RotatingLogo />
+          </div>
         </div>
       </section>
 

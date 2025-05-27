@@ -1,6 +1,8 @@
 /* flipcard.css */
 .flip-card {
   background-color: transparent;
+  width: 300px;
+  height: 200px;
   margin-bottom: 5px; /* Отступ снизу для карточек */
   perspective: 1000px;
   margin: 0 auto; /* Центрирование карточки */
