@@ -5,7 +5,7 @@ export default function Spetstehnika() {
     {
       title: 'Реанимобиль A/B/C',
       description: 'Специализированный медицинский автомобиль для экстренной помощи',
-      image: '/reanimobil/reanimobil.avif',
+      image: '/reanimobil/reanimobilwhite1.jpg',
       slug: 'reanimobil'
     },
     {

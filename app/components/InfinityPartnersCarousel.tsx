@@ -20,8 +20,8 @@ export default function InfinityPartnersCarousel() {
                 src={partner.src}
                 alt={partner.alt}
                 title={partner.title}
-                width={120}
-                height={120}
+                width={100}
+                height={100}
                 style={{ objectFit: 'contain' }}
               />
               <p>{partner.title}</p>

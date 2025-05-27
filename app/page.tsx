@@ -92,7 +92,7 @@ export default function Home() {
           <div className="flex-1 bg-[#181818] rounded-2xl shadow-lg p-8 flex flex-col justify-center">
             <h2 className="text-2xl font-bold mb-6">Связаться с нами</h2>
             <form className="space-y-5">
-              <input type="text" placeholder="Имя" className="w-full px-4 py-3 bg-secondary text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
+              <input type="text" placeholder="Имя" className="w-full px-4 py-3 bg-secondary text-white rounded-lg focus:outline focus:ring-2 focus:ring-primary" />
               <input type="tel" placeholder="Телефон" className="w-full px-4 py-3 bg-secondary text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
               <input type="email" placeholder="E-mail" className="w-full px-4 py-3 bg-secondary text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
               <textarea placeholder="Сообщение" rows={4} className="w-full px-4 py-3 bg-secondary text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none" />
@@ -100,7 +100,7 @@ export default function Home() {
             </form>
           </div>
           {/* Контактные данные */}
-          <div className="flex-1 bg-[#181818] rounded-2xl shadow-lg p-8 flex flex-col justify-center">
+          <div className="flex-1 bg-[#181818] rounded-2xl shadow-lg p-8 flex flex-col justify-start">
             <h2 className="text-2xl font-bold mb-6">Контакты</h2>
             <div className="space-y-4 text-lg ">
               <div><span className="font-semibold">г. Актобе,</span> ул. Газизы Жубановой 39Н, н/п 44</div>

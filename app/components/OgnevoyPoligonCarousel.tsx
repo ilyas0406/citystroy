@@ -33,7 +33,7 @@ export default function OgnevoyPoligonCarousel() {
         alt={`Огневой полигон ${active + 1}`}
         width={650}
         height={900}
-        className="w-[650px] h-[500px] object-fill rounded-2xl shadow-xl mx-auto"
+        className="w-[600px] h-[650px] object-fill rounded-2xl shadow-xl mx-auto"
       />
       {/* Правая стрелка */}
       {total > 1 && (

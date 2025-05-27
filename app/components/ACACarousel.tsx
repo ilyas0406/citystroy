@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 const images = [
-  "/ASA/asa.avif",
+  "/ASA/asa.webp",
   "/ASA/asa1.jpg",
 ];
 
@@ -32,7 +32,7 @@ export default function ACACarousel() {
         alt={`Аварийно-спасательный автомобиль ${active + 1}`}
         width={600}
         height={450}
-        className="w-[650px] h-[450px] object-fill rounded-2xl shadow-xl mx-auto"
+        className="w-[600px] h-[350px] object-fill rounded-2xl shadow-xl mx-auto"
       />
       {/* Правая стрелка */}
       {total > 1 && (

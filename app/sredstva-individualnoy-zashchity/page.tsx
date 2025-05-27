@@ -48,7 +48,7 @@ export default function SredstvaIndividualnoyZashchity() {
               alt={product.title} 
               width={600} 
               height={400} 
-              className="w-full h-64 object-cover"
+              className="w-full h-110 object-fill"
             />
             <div className="p-6">
               <h2 className="text-2xl font-semibold mb-4">{product.title}</h2>
