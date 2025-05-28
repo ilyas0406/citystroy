@@ -24,7 +24,7 @@ const Header = () => {
     },
 
     { title: 'О компании', href: '/about' },
-    { title: 'Контакты', href: '/#contact-form', className: 'bg-[#D32F2F] text-white' },
+    { title: 'Контакты', href: '#footer', className: 'bg-[#D32F2F] text-white' },
   ];
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

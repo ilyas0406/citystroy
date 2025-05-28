@@ -40,9 +40,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold mb-8 text-center">Автобаклаборатория</h1>
           <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="md:w-1/2">
-              <AvtobaclabCarousel />
-            </div>
             <div className="md:w-1/2 space-y-6">
               <p className="text-lg text-gray-300">
                 Автобаклаборатория — это специализированный мобильный комплекс санитарно-эпидемиологического назначения, предназначенный для проведения противоэпидемических мероприятий.
@@ -78,6 +75,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 </ul>
               </div>
             </div>
+            <div className="md:w-1/2">
+              <AvtobaclabCarousel />
+            </div>
           </div>
         </div>
       </div>
@@ -90,9 +90,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold mb-8 text-center">Модульный стрелковый тир</h1>
           <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="md:w-1/2">
-              <TirCarousel />
-            </div>
             <div className="md:w-1/2 space-y-6">
               <p className="text-lg text-gray-300">
                 Модульный стрелковый тир предназначен для профессиональной подготовки, идеально подходящие для армии, полиции, спецподразделений и охранных структур. Полностью автономные и экологически безопасные комплексы размещаются в модульных помещениях и обеспечивают реальную стрельбу в защищённой и управляемой среде.
@@ -128,6 +125,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 </div>
               </div>
             </div>
+            <div className="md:w-1/2">
+              <TirCarousel />
+            </div>
           </div>
         </div>
       </div>
@@ -140,9 +140,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold mb-8 text-center">Учебно-тренировочный комплекс «Штурмовик»</h1>
           <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="md:w-1/2">
-              <ShturmovikCarousel />
-            </div>
             <div className="md:w-1/2 space-y-6">
               <p className="text-lg text-gray-300">
                 Учебно-тренировочный комплекс «Штурмовик» — это современная многофункциональная модульная башня, предназначенная для отработки навыков тактического штурма, высотных операций, спасательных работ и тренировок в условиях, приближенных к реальным боевым условиям.
@@ -178,6 +175,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   <li>Соответствие требованиям безопасности и стандартам подготовки спецподразделений</li>
                 </ul>
               </div>
+            </div>
+            <div className="md:w-1/2">
+              <ShturmovikCarousel />
             </div>
           </div>
         </div>

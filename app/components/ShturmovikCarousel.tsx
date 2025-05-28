@@ -5,7 +5,6 @@ import Image from "next/image";
 const images = [
   "/shturmovik/shturmovik.jpg",
   "/shturmovik/shturmovik1.jpg",
-  // Add more images as needed
 ];
 
 export default function ShturmovikCarousel() {

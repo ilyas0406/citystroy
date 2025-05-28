@@ -1,9 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import FlipCard from './components/FlipCard';
 import RotatingLogo from './components/RotatingLogo';
 import InfinityPartnersCarousel from './components/InfinityPartnersCarousel';
+import Modal from './components/Modal';
 
 
 
@@ -14,6 +16,7 @@ import InfinityPartnersCarousel from './components/InfinityPartnersCarousel';
 
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <main className="bg-[#000000] text-white ">
       {/* Hero Section */}
@@ -36,12 +39,12 @@ export default function Home() {
             <p className="text-xl md:text-2xl mb-8 text-gray-200">
               Поставка тренажёров, спецтехники и СИЗ для МЧС, МВД, МО и промышленных объектов
             </p>
-            <Link
-              href="#contact-form"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="inline-block bg-[#D32F2F] hover:bg-[#B71C1C] text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
             >
               Оставить заявку
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -87,39 +90,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact-form" className="w-full bg-[#23232b] py-16 text-white">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row gap-12 items-stretch">
-          {/* Форма связи */}
-          <div className="flex-1 bg-[#181818] rounded-2xl shadow-lg p-8 flex flex-col justify-center">
-            <h2 className="text-2xl font-bold mb-6">Связаться с нами</h2>
-            <form className="space-y-5">
-              <input type="text" placeholder="Имя" className="w-full px-4 py-3 bg-secondary text-white rounded-lg focus:outline focus:ring-2 focus:ring-primary" />
-              <input type="tel" placeholder="Телефон" className="w-full px-4 py-3 bg-secondary text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
-              <input type="email" placeholder="E-mail" className="w-full px-4 py-3 bg-secondary text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
-              <textarea placeholder="Сообщение" rows={4} className="w-full px-4 py-3 bg-secondary text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none" />
-              <button type="submit" className="w-full bg-primary hover:bg-destructive text-primary-foreground py-4 rounded-lg font-semibold transition-colors">Отправить</button>
-            </form>
-          </div>
-          {/* Контактные данные */}
-          <div className="flex-1 bg-[#181818] rounded-2xl shadow-lg p-8 flex flex-col justify-start">
-            <h2 className="text-2xl font-bold mb-6">Контакты</h2>
-            <div className="space-y-4 text-lg ">
-              <div><span className="font-semibold">г. Актобе,</span> ул. Газизы Жубановой 39Н, н/п 44</div>
-              <div><span className="font-semibold">г. Астана,</span> пр. Мангилик Ел 37, офис 62</div>
-              <div><span className="font-semibold">Телефон:</span> <a href="tel:+7 (7172) 24-96-73" className="underline hover:text-primary">+7 (7172) 24-96-73</a></div>
-              <div><span className="font-semibold">E-mail:</span> <a href="mailto:citystroy2030@mail.ru" className="underline hover:text-primary">citystroy2030@mail.ru</a></div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Partners Carousel */}
-      <section className="w-full carbonBg">
+      <section id="footer" className="w-full carbonBg">
         <div className="container mx-auto px-4">
           <InfinityPartnersCarousel />
         </div>
       </section>
+
+      {/* Contact Form Modal */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <form className="space-y-5">
+          <input type="text" placeholder="Имя" className="w-full px-4 py-3 bg-secondary text-white rounded-lg focus:outline focus:ring-2 focus:ring-primary" />
+          <input type="tel" placeholder="Телефон" className="w-full px-4 py-3 bg-secondary text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
+          <input type="email" placeholder="E-mail" className="w-full px-4 py-3 bg-secondary text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
+          <textarea placeholder="Сообщение" rows={4} className="w-full px-4 py-3 bg-secondary text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none" />
+          <button type="submit" className="w-full bg-primary hover:bg-destructive text-primary-foreground py-4 rounded-lg font-semibold transition-colors">Отправить</button>
+        </form>
+      </Modal>
     </main>
   );
 }
