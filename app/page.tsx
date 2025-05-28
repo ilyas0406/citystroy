@@ -1,16 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import FlipCard from './components/FlipCard';
 import RotatingLogo from './components/RotatingLogo';
 import InfinityPartnersCarousel from './components/InfinityPartnersCarousel';
 import Modal from './components/Modal';
-
-
-
-
-
 
 
 
