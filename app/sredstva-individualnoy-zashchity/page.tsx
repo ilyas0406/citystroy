@@ -5,7 +5,7 @@ export default function SredstvaIndividualnoyZashchity() {
     {
       title: 'Воздушно-дыхательный аппарат',
       description: 'Защита органов дыхания для пожарных и спасателей',
-      image: '/msa/msa.png',
+      image: '/msa/msa.jpg',
       slug: 'msa'
     },
     {
@@ -48,7 +48,7 @@ export default function SredstvaIndividualnoyZashchity() {
               alt={product.title} 
               width={600} 
               height={400} 
-              className="w-full h-110 object-fill"
+              className="w-full h-115 object-fill"
             />
             <div className="p-6">
               <h2 className="text-2xl font-semibold mb-4">{product.title}</h2>

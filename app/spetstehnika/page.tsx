@@ -11,7 +11,7 @@ export default function Spetstehnika() {
     {
       title: 'Аварийно-спасательный автомобиль',
       description: 'Автомобиль для ликвидации чрезвычайных ситуаций и проведения спасательных работ',
-      image: '/ASA/asa.avif',
+      image: '/ASA/asa1.jpg',
       slug: 'aca'
     },
     {

@@ -261,7 +261,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </div>
           <div className="md:w-1/2 flex justify-center items-center">
             <Image 
-              src="/reanimobil/reanimobil.avif"
+              src="/reanimobil/reanimobilwhite1.jpg"
               alt="Реанимобиль"
               width={650}
               height={500}
@@ -329,7 +329,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </div>
           <div className="md:w-1/2 flex justify-center items-center">
             <Image 
-              src="/msa/msa.png"
+              src="/msa/msa.jpg"
               alt="Воздушно-дыхательный аппарат MSA"
               width={250}
               height={160}
