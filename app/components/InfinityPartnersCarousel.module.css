@@ -41,12 +41,8 @@
 }
 
 @keyframes scrollReverse {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  from {transform:translateX(0);}
+  to {transform:translateX(-50%);}
 }
 .track {
   display: flex;
@@ -66,10 +62,6 @@
   flex-shrink: 0;
 }
 @keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  from {transform:translateX(-50%);}
+  to {transform:translateX(0);}
 }
