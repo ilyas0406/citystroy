@@ -11,7 +11,7 @@ export default function UchebnoTrenirovochnyeKompleksy() {
     {
       title: 'Сейсмотренажер',
       description: 'Симуляция действий в условиях землетрясения и чрезвычайных ситуаций',
-      image: '/seismo/24.avif',
+      image: '/seismo/24.jpg',
       slug: 'seismotrenazher'
     },
     {

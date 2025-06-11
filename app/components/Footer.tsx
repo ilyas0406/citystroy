@@ -21,10 +21,12 @@ const Footer = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
-                  <div>
+                  <div className="space-y-1">
                     <h4 className="font-medium text-gray-200">Телефон</h4>
-                    <a href="tel:77172249673" className="text-gray-400 hover:text-white transition-colors">+7 (7172) 24-96-73</a>
-                    <a href="tel:77009782119" className="text-gray-400 hover:text-white transition-colors">+7 700 978 2119</a>
+                    <div className="flex flex-col space-y-1">
+                      <a href="tel:77172249673" className="text-gray-400 hover:text-white transition-colors">+7 (7172) 24-96-73</a>
+                      <a href="tel:77009782119" className="text-gray-400 hover:text-white transition-colors">+7 700 978 2119</a>
+                    </div>
                   </div>
                 </div>
                 
@@ -36,7 +38,7 @@ const Footer = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-200">Email</h4>
-                    <a href="mailto:citystroy2030@mail.ru" className="text-gray-400 hover:text-white transition-colors">citystroy2030@mail.ru</a>
+                    <a href="mailto:citystroy2030@mail.ru" className="text-gray-400 hover:text-white transition-colors">citystroy2030.kz@gmail.com</a>
                   </div>
                 </div>
 
@@ -63,6 +65,7 @@ const Footer = () => {
               <div>
                 <h3 className="text-xl font-bold mb-4">Компания</h3>
                 <ul className="space-y-2">
+                  <li><Link href="/" className="text-gray-400 hover:text-white transition-colors">Главная</Link></li>
                   <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">О нас</Link></li>
                 </ul>
               </div>

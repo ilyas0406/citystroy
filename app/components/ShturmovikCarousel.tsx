@@ -7,43 +7,47 @@ const images = [
   "/shturmovik/shturmovik1.jpg",
 ];
 
+interface ArrowButtonProps {
+  direction: "left" | "right";
+  onClick: () => void;
+  label: string;
+}
+
+const ArrowButton = ({ direction, onClick, label }: ArrowButtonProps) => {
+  const isLeft = direction === "left";
+  return (
+    <button
+      className={`absolute ${isLeft ? "left-0" : "right-0"} top-1/2 -translate-y-1/2 z-20 
+                  bg-black/40 hover:bg-[#D32F2F]/80 text-white w-12 h-12 flex 
+                  items-center justify-center rounded-full shadow-lg 
+                  transition-colors duration-200 backdrop-blur-md text-2xl`}
+      onClick={onClick}
+      aria-label={label}
+    >
+      {isLeft ? "←" : "→"}
+    </button>
+  );
+};
+
+
 export default function ShturmovikCarousel() {
   const [active, setActive] = useState(0);
-  const total = images.length;
 
-  const prev = () => setActive((active - 1 + total) % total);
-  const next = () => setActive((active + 1) % total);
+  const prev = () => setActive((active - 1 + images.length) % images.length);
+  const next = () => setActive((active + 1) % images.length);
 
   return (
     <div className="relative flex flex-row items-center justify-center h-[550px] w-full select-none overflow-hidden">
-      {/* Левая стрелка */}
-      {total > 1 && (
-        <button
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-[#D32F2F]/80 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-colors duration-200 backdrop-blur-md text-2xl"
-          onClick={prev}
-          aria-label="Назад"
-        >
-          &#8592;
-        </button>
-      )}
-      {/* Картинка фиксированного размера по центру */}
+      {images.length > 1 && <ArrowButton direction="left" onClick={prev} label="Назад" />}
       <Image
+        key={active}
         src={images[active]}
-        alt={`Учебно-тренировочный комплекс "Штурмовик" ${active + 1}`}
+        alt={`Комплекс "Штурмовик" — изображение ${active + 1}`}
         width={650}
-        height={900}
-        className="w-[650px] h-[500px] object-cover rounded-2xl shadow-xl mx-auto"
+        height={550}
+        className="w-full h-[500px] object-contain shadow-xl mx-auto transition-opacity duration-300"
       />
-      {/* Правая стрелка */}
-      {total > 1 && (
-        <button
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-[#D32F2F]/80 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-colors duration-200 backdrop-blur-md text-2xl"
-          onClick={next}
-          aria-label="Вперёд"
-        >
-          &#8594;
-        </button>
-      )}
+      {images.length > 1 && <ArrowButton direction="right" onClick={next} label="Вперёд" />}
     </div>
   );
 }

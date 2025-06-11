@@ -31,9 +31,9 @@ export default function OgnevoyPoligonCarousel() {
       <Image
         src={images[active]}
         alt={`Огневой полигон ${active + 1}`}
-        width={650}
-        height={900}
-        className="w-[600px] h-[650px] object-fill rounded-2xl shadow-xl mx-auto"
+        width={600}
+        height={460}
+        className="w-[600px] h-[460px] object-fill rounded-2xl shadow-xl mx-auto"
       />
       {/* Правая стрелка */}
       {total > 1 && (
