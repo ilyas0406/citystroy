@@ -228,7 +228,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </div>
           <div className="md:w-1/2 flex justify-center items-center">
             <Image 
-              src="/msa/msa.jpg"
+              src="/msa/msa.png"
               alt="Воздушно-дыхательный аппарат MSA"
               width={250}
               height={160}
@@ -281,7 +281,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </div>
           <div className="md:w-1/2 flex justify-center items-center">
             <Image 
-              src="/bop/bop.jpg"
+              src="/bop/bop.png"
               alt="Боевая одежда пожарного"
               width={350}
               height={250}

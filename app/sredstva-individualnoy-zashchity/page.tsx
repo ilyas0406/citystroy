@@ -5,7 +5,7 @@ export default function SredstvaIndividualnoyZashchity() {
     {
       title: 'Воздушно-дыхательный аппарат',
       description: 'Защита органов дыхания для пожарных и спасателей',
-      image: '/msa/msa.jpg',
+      image: '/msa/msa.png',
       slug: 'msa'
     },
     {
@@ -17,7 +17,7 @@ export default function SredstvaIndividualnoyZashchity() {
     {
       title: 'Боевая одежда пожарного - БОП',
       description: 'Защитный костюм для профессиональных пожарных',
-      image: '/bop/bop.jpg',
+      image: '/bop/bop.png',
       slug: 'bop'
     },
     {
